@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Why Is the Sky Blue? | Know Why Today</title>
+<meta name="description" content="Why is the sky blue? Discover the science behind the blue sky and Rayleigh scattering in a simple explanation.">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,Helvetica,sans-serif;background:#f5f7fb;color:#1f2937;line-height:1.7}
+
+/* Updated Header */
+header{background:linear-gradient(135deg,#2563eb,#4f46e5);color:white;padding:32px 20px;text-align:center}
+.header-inner{max-width:900px;margin:auto}
+.logo{font-size:28px;font-weight:700;letter-spacing:-0.5px}
+
+main{max-width:850px;margin:30px auto;padding:0 20px}
+.category{display:none} /* Removed redundant category badge */
+
+h1{font-size:clamp(28px,5vw,42px);line-height:1.2;color:#111827;margin-bottom:12px;letter-spacing:-1px}
+.subtitle{font-size:16px;color:#4b5563;margin-bottom:24px}
+
+.hero{height:300px;border-radius:18px;background:radial-gradient(circle at 25% 25%,rgba(255,255,255,.7),transparent 18%),linear-gradient(180deg,#38bdf8,#2563eb);position:relative;overflow:hidden;margin-bottom:35px;box-shadow:0 12px 35px rgba(37,99,235,.2)}
+.sun{width:85px;height:85px;background:#fde68a;border-radius:50%;position:absolute;top:35px;right:60px;box-shadow:0 0 45px rgba(253,230,138,.8)}
+.cloud{position:absolute;background:rgba(255,255,255,.85);border-radius:50px;width:150px;height:45px;bottom:65px;left:60px}
+.cloud:before,.cloud:after{content:"";position:absolute;background:rgba(255,255,255,.9);border-radius:50%}
+.cloud:before{width:65px;height:65px;left:25px;bottom:15px}.cloud:after{width:80px;height:80px;right:20px;bottom:10px}
+
+article{background:white;padding:35px;border-radius:18px;box-shadow:0 5px 25px rgba(0,0,0,.06)}
+article p{font-size:17px;margin-bottom:22px}
+article h2{font-size:27px;color:#111827;margin:30px 0 14px}
+.highlight{background:#eff6ff;border-left:5px solid #2563eb;padding:20px;margin:28px 0;border-radius:8px}
+.highlight strong{color:#1d4ed8}
+.fact-box{background:#111827;color:white;padding:25px;border-radius:14px;margin-top:30px}
+.fact-box h3{color:#93c5fd;margin-bottom:8px}
+.source{font-size:13px;color:#6b7280;margin-top:30px;padding-top:20px;border-top:1px solid #e5e7eb}
+.source a{color:#2563eb}
+footer{text-align:center;padding:35px 20px;color:#6b7280;font-size:14px}
+
+/* Unified Section Navigation Grid */
+.sections{max-width:850px;margin:20px auto 0;padding:0 20px}
+.section-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.section-card{cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;background:white;color:#111827;padding:14px 16px;border-radius:14px;text-align:center;font-weight:600;box-shadow:0 2px 8px rgba(0,0,0,.04);border:1px solid #e5e7eb;transition:all .2s ease}
+.section-card:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(0,0,0,.08);border-color:#cbd5e1}
+.section-card.active{background:#ffffff;color:#2563eb;border:2px solid #2563eb;box-shadow:0 4px 12px rgba(37,99,235,.15)}
+
+/* Question Cards & List Improvements */
+.question-list{display:flex;flex-direction:column;gap:12px;margin-top:20px}
+.question-card{width:100%;text-align:left;font-family:inherit;cursor:pointer;border:1px solid #e5e7eb;background:#ffffff;border-radius:12px;padding:16px 20px;color:#111827;font-size:16px;font-weight:600;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 4px rgba(0,0,0,0.03);transition:all .2s ease}
+.question-card::after{content:"›";font-size:22px;color:#9ca3af;font-weight:400;margin-left:12px}
+.question-card:hover{background:#f8fafc;border-color:#2563eb;color:#2563eb;transform:translateX(2px)}
+.question-card:hover::after{color:#2563eb}
+
+.answer-panel{margin-top:20px;background:white;border-radius:18px;padding:30px;box-shadow:0 5px 25px rgba(0,0,0,.06)}
+.answer-panel h1{margin-bottom:18px}
+.answer-panel h2{font-size:24px;color:#111827;margin:24px 0 12px}
+.answer-panel p{font-size:16px;margin-bottom:20px}
+.back-to-questions, .back-to-section{display:inline-block;margin-top:15px;color:#2563eb;text-decoration:none;font-weight:700;cursor:pointer}
+
+.pedagogy-section{max-width:850px;margin:30px auto;padding:0 20px}
+.pedagogy-section ul{margin:0 0 20px 22px}
+.pedagogy-section li{margin-bottom:7px}
+.practice-list{display:flex;flex-direction:column;gap:18px}
+.practice-item{border:1px solid #e5e7eb;border-radius:14px;padding:20px;background:#fff}
+.practice-item h3{margin-bottom:12px;color:#111827}
+.pedagogy-answer .source{margin-top:25px}
+.back-to-pedagogy{margin-top:20px;border:0;background:none;color:#2563eb;font:inherit;font-weight:700;cursor:pointer}
+
+@media(max-width:600px){
+  header{padding:24px 16px}
+  main{margin-top:20px}
+  article{padding:20px}
+  .hero{height:200px}.sun{right:20px}.cloud{left:20px}
+  .section-grid{grid-template-columns:repeat(2,1fr)}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="logo">Know Why Today</div>
+  </div>
+</header>
+
+<div class="sections" id="home">
+  <div class="section-grid">
+    <a class="section-card active" href="#science">🔬 Science</a>
+    <a class="section-card" href="#psychology">🧠 Psychology</a>
+    <a class="section-card" href="#philosophy">💭 Philosophy</a>
+    <a class="section-card" href="#computer">💻 Computer</a>
+    <a class="section-card" href="#pedagogy">📚 Pedagogy</a>
+  </div>
+</div>
+
+<main id="science">
+  <article>
+    <h1>Science Questions</h1>
+    <p class="subtitle">Choose a question to read the detailed answer.</p>
+    <div class="question-list">
+      <button class="question-card" data-section="science" data-q="0">Why Is the Sky Blue?</button>
+      <button class="question-card" data-section="science" data-q="1">Why Does the Moon Shine?</button>
+      <button class="question-card" data-section="science" data-q="2">Why Do We See Lightning Before Hearing Thunder?</button>
+      <button class="question-card" data-section="science" data-q="3">Why Does Ice Float on Water?</button>
+      <button class="question-card" data-section="science" data-q="4">Why Does the Sun Look Red at Sunset?</button>
+    </div>
+    <div class="section-answers">
+      <div class="section-answer" id="science-answer-0" style="display:none;">
+        <h1>Why Is the Sky Blue?</h1>
+        <p>Have you ever looked up at the sky and wondered why it is blue? The answer involves sunlight, Earth's atmosphere, and a physical phenomenon called <strong>Rayleigh scattering</strong>.</p>
+        <h2>Sunlight isn't just white light</h2>
+        <p>Although sunlight appears white to our eyes, it contains many different wavelengths of visible light. When sunlight enters Earth's atmosphere, it encounters tiny molecules of gases such as nitrogen and oxygen.</p>
+        <h2>So why does blue get scattered?</h2>
+        <p>The atmosphere scatters shorter wavelengths much more strongly than longer wavelengths. Blue light has a shorter wavelength than red light, so it is scattered throughout the sky much more efficiently.</p>
+        <div class="highlight">
+          <strong>The simple version:</strong><br>Air molecules scatter blue light much more strongly than red light. That scattered blue light reaches our eyes from many directions, making the sky appear blue.
+        </div>
+        <h2>Why does the sky turn orange or red at sunset?</h2>
+        <p>When the Sun is near the horizon, sunlight travels through a much greater distance of atmosphere. Much of the blue light is scattered away from the direct path, leaving more red and orange light to reach our eyes.</p>
+        <a class="back-to-section" data-section="science">← Back to questions</a>
+      </div>
+      <div class="section-answer" id="science-answer-1" style="display:none;">
+        <h1>Why Does the Moon Shine?</h1>
+        <p>The Moon does not produce its own visible light. What we call moonlight is sunlight reflected from the Moon's surface.</p>
+        <h2>Why does the Moon have phases?</h2>
+        <p>As the Moon orbits Earth, we see different portions of its sunlit half. This changing view creates the phases from new Moon to full Moon and back again.</p>
+        <a class="back-to-section" data-section="science">← Back to questions</a>
+      </div>
+      <div class="section-answer" id="science-answer-2" style="display:none;">
+        <h1>Why Do We See Lightning Before Hearing Thunder?</h1>
+        <p>Lightning and thunder are produced by the same storm event, but light travels through air enormously faster than sound.</p>
+        <h2>Why is there a delay?</h2>
+        <p>The flash reaches your eyes almost immediately, while the sound wave from the lightning takes longer to travel through the atmosphere. The longer the delay, the farther away the lightning is.</p>
+        <a class="back-to-section" data-section="science">← Back to questions</a>
+      </div>
+      <div class="section-answer" id="science-answer-3" style="display:none;">
+        <h1>Why Does Ice Float on Water?</h1>
+        <p>Ice floats because solid water is less dense than liquid water.</p>
+        <h2>What happens when water freezes?</h2>
+        <p>Water molecules form a more open crystalline structure as they freeze. This structure occupies more space, lowering the density of ice compared with liquid water. Because ice is less dense, it floats.</p>
+        <a class="back-to-section" data-section="science">← Back to questions</a>
+      </div>
+      <div class="section-answer" id="science-answer-4" style="display:none;">
+        <h1>Why Does the Sun Look Red at Sunset?</h1>
+        <p>At sunset, sunlight travels through a much longer path in Earth's atmosphere.</p>
+        <h2>Why do red and orange colors remain?</h2>
+        <p>Air molecules scatter shorter wavelengths such as blue light more strongly. During the long journey through the atmosphere, much of the blue light is scattered away, while more of the longer red and orange wavelengths reach our eyes.</p>
+        <a class="back-to-section" data-section="science">← Back to questions</a>
+      </div>
+    </div>
+  </article>
+</main>
+
+<section id="psychology" class="content-section" style="max-width:850px;margin:30px auto;padding:0 20px;display:none;">
+  <article>
+    <h2>Psychology Questions</h2>
+    <p class="subtitle">Choose a question to read the detailed answer.</p>
+    <div class="question-list">
+      <button class="question-card" data-section="psychology" data-q="0">Why Do We Dream?</button>
+      <button class="question-card" data-section="psychology" data-q="1">Why Do We Procrastinate Even When We Know Something Is Important?</button>
+      <button class="question-card" data-section="psychology" data-q="2">Why Do We Remember Some Things but Forget Others?</button>
+      <button class="question-card" data-section="psychology" data-q="3">Why Do We Get Addicted to Our Phones?</button>
+      <button class="question-card" data-section="psychology" data-q="4">Why Does Music Affect Our Emotions?</button>
+    </div>
+    <div class="section-answers">
+      <div class="section-answer" id="psychology-answer-0" style="display:none;">
+        <h1>Why Do We Dream?</h1>
+        <p>Dreams are experiences produced by the brain during sleep. They can combine memories, emotions, sensations, and fragments of recent experiences into unusual stories.</p>
+        <h2>Why does the brain dream?</h2>
+        <p>There is no single explanation accepted by scientists. Dreaming appears to be connected with processes involved in memory, emotion, and the organization of information during sleep. Dreams can also reflect recent experiences and strong emotions.</p>
+        <a class="back-to-section" data-section="psychology">← Back to questions</a>
+      </div>
+      <div class="section-answer" id="psychology-answer-1" style="display:none;">
+        <h1>Why Do We Procrastinate Even When We Know Something Is Important?</h1>
+        <p>Procrastination is often less about laziness and more about avoiding an unpleasant feeling. A difficult or boring task can create discomfort, so the brain chooses an easier activity that gives immediate relief or reward.</p>
+        <h2>Why is it so tempting?</h2>
+        <p>Immediate rewards are psychologically powerful. Checking a phone or watching a video feels rewarding now, while the benefit of finishing a task may come much later.</p>
+        <a class="back-to-section" data-section="psychology">← Back to questions</a>
+      </div>
+      <div class="section-answer" id="psychology-answer-2" style="display:none;">
+        <h1>Why Do We Remember Some Things but Forget Others?</h1>
+        <p>Memory is not a perfect recording of everything we experience. Attention, emotion, repetition, and how strongly information is connected to existing knowledge all influence what we remember.</p>
+        <h2>Why do some memories last?</h2>
+        <p>Information that receives attention and is repeatedly processed is more likely to become strongly represented in long-term memory. Emotional events can also be especially memorable.</p>
+        <a class="back-to-section" data-section="psychology">← Back to questions</a>
+      </div>
+      <div class="section-answer" id="psychology-answer-3" style="display:none;">
+        <h1>Why Do We Get Addicted to Our Phones?</h1>
+        <p>Phones provide a constant stream of notifications, entertainment, social interaction, and new information. These unpredictable rewards can encourage repeated checking.</p>
+        <h2>Why is checking so difficult to resist?</h2>
+        <p>Each new message or interesting piece of content can provide a small reward. Over time, the habit of checking can become automatic, especially when the phone is always nearby.</p>
+        <a class="back-to-section" data-section="psychology">← Back to questions</a>
+      </div>
+      <div class="section-answer" id="psychology-answer-4" style="display:none;">
+        <h1>Why Does Music Affect Our Emotions?</h1>
+        <p>Music can influence emotion through melody, rhythm, memories, expectations, and associations. A song can remind us of a particular person or period of life and immediately bring back the feelings associated with it.</p>
+        <h2>Why can a song change our mood?</h2>
+        <p>Music interacts with brain systems involved in emotion, attention, memory, and reward. That is why the same song can make one person feel calm while another feels excited or nostalgic.</p>
+        <a class="back-to-section" data-section="psychology">← Back to questions</a>
+      </div>
+    </div>
+  </article>
+</section>
+
+<section id="philosophy" class="content-section" style="max-width:850px;margin:30px auto;padding:0 20px;display:none;">
+  <article>
+    <h2>Philosophy Questions</h2>
+    <p class="subtitle">Choose a question to read the detailed answer.</p>
+    <div class="question-list">
+      <button class="question-card" data-section="philosophy" data-q="0">Why Do Humans Search for Meaning?</button>
+      <button class="question-card" data-section="philosophy" data-q="1">Do We Really Have Free Will?</button>
+      <button class="question-card" data-section="philosophy" data-q="2">What Makes Something Right or Wrong?</button>
+      <button class="question-card" data-section="philosophy" data-q="3">Why Are We Afraid of Death?</button>
+      <button class="question-card" data-section="philosophy" data-q="4">What Makes a Person the Same Person Over Time?</button>
+    </div>
+    <div class="section-answers">
+      <div class="section-answer" id="philosophy-answer-0" style="display:none;">
+        <h1>Why Do Humans Search for Meaning?</h1>
+        <p>Humans naturally try to connect events into stories and explanations. Meaning can help people understand their experiences, make decisions, and decide what goals are worth pursuing.</p>
+        <h2>Does everyone find meaning in the same way?</h2>
+        <p>No. People can find meaning through relationships, creativity, knowledge, service, achievement, spirituality, or many other parts of life.</p>
+        <a class="back-to-section" data-section="philosophy">← Back to questions</a>
+      </div>
+      <div class="section-answer" id="philosophy-answer-1" style="display:none;">
+        <h1>Do We Really Have Free Will?</h1>
+        <p>Free will asks whether our choices are genuinely ours or whether every decision is determined by prior causes. Philosophers have debated this question for centuries.</p>
+        <h2>Why is it difficult to answer?</h2>
+        <p>Our decisions are influenced by biology, experiences, circumstances, and unconscious processes. Yet we also experience ourselves as agents who deliberate and choose. Different philosophical positions interpret this tension differently.</p>
+        <a class="back-to-section" data-section="philosophy">← Back to questions</a>
+      </div>
+      <div class="section-answer" id="philosophy-answer-2" style="display:none;">
+        <h1>What Makes Something Right or Wrong?</h1>
+        <p>Ethics asks how we should decide what is right and wrong. Some approaches focus on consequences, some on duties and principles, and others on character and virtues.</p>
+        <h2>Is there one universal answer?</h2>
+        <p>Philosophers disagree. The disagreement exists partly because moral reasoning can involve competing values, such as freedom, fairness, harm, responsibility, and compassion.</p>
+        <a class="back-to-section" data-section="philosophy">← Back to questions</a>
+      </div>
+      <div class="section-answer" id="philosophy-answer-3" style="display:none;">
+        <h1>Why Are We Afraid of Death?</h1>
+        <p>Death represents the end of a person's known experiences and raises questions about uncertainty, loss, and what happens afterward. Fear of death can therefore involve both the unknown and the possibility of losing relationships and future experiences.</p>
+        <h2>Can thinking about death change how we live?</h2>
+        <p>Many philosophical traditions argue that awareness of mortality can make people pay greater attention to how they spend their limited time and what they consider important.</p>
+        <a class="back-to-section" data-section="philosophy">← Back to questions</a>
+      </div>
+      <div class="section-answer" id="philosophy-answer-4" style="display:none;">
+        <h1>What Makes a Person the Same Person Over Time?</h1>
+        <p>You are physically and psychologically different from the person you were years ago, yet you normally think of yourself as the same person.</p>
+        <h2>What creates personal identity?</h2>
+        <p>Philosophers have proposed different answers, including continuity of memory, psychological connections, the body, or a continuing stream of consciousness. There is no universally accepted solution.</p>
+        <a class="back-to-section" data-section="philosophy">← Back to questions</a>
+      </div>
+    </div>
+  </article>
+</section>
+
+<section id="computer" class="content-section" style="max-width:850px;margin:30px auto;padding:0 20px;display:none;">
+  <article>
+    <h2>Computer Questions</h2>
+    <p class="subtitle">Choose a question to read the detailed answer.</p>
+    <div class="question-list">
+      <button class="question-card" data-section="computer" data-q="0">How Does the Internet Know Where to Send Your Data?</button>
+      <button class="question-card" data-section="computer" data-q="1">How Does a Computer Store Information?</button>
+      <button class="question-card" data-section="computer" data-q="2">Why Does a Computer Slow Down Over Time?</button>
+      <button class="question-card" data-section="computer" data-q="3">How Does Artificial Intelligence Learn?</button>
+      <button class="question-card" data-section="computer" data-q="4">Why Can't Computers Think Exactly Like Humans?</button>
+    </div>
+    <div class="section-answers">
+      <div class="section-answer" id="computer-answer-0" style="display:none;">
+        <h1>How Does the Internet Know Where to Send Your Data?</h1>
+        <p>When you send information over the internet, it is broken into packets. Network devices called routers examine addressing information and forward those packets toward their destination.</p>
+        <h2>How does the data find its way?</h2>
+        <p>The internet is a network of interconnected networks. Routing protocols help routers choose paths, while systems such as DNS translate human-friendly domain names into IP addresses.</p>
+        <a class="back-to-section" data-section="computer">← Back to questions</a>
+      </div>
+      <div class="section-answer" id="computer-answer-1" style="display:none;">
+        <h1>How Does a Computer Store Information?</h1>
+        <p>Computers represent information using bits, which have two possible states, commonly represented as 0 and 1. Groups of bits can represent numbers, text, images, sound, and instructions.</p>
+        <h2>Where is the information stored?</h2>
+        <p>Different technologies store bits in different ways. RAM provides fast temporary storage, while storage devices such as SSDs retain information when the computer is turned off.</p>
+        <a class="back-to-section" data-section="computer">← Back to questions</a>
+      </div>
+      <div class="section-answer" id="computer-answer-2" style="display:none;">
+        <h1>Why Does a Computer Slow Down Over Time?</h1>
+        <p>A computer may feel slower as software becomes more demanding, storage becomes crowded, background processes increase, or hardware and software problems develop.</p>
+        <h2>Is the computer itself necessarily getting weaker?</h2>
+        <p>Not always. Often the hardware is still capable of similar performance, but the amount of work being asked of it has increased.</p>
+        <a class="back-to-section" data-section="computer">← Back to questions</a>
+      </div>
+      <div class="section-answer" id="computer-answer-3" style="display:none;">
+        <h1>How Does Artificial Intelligence Learn?</h1>
+        <p>Many AI systems learn patterns from examples. During training, a model compares its predictions with expected results and adjusts internal parameters to reduce its errors.</p>
+        <h2>Does AI learn exactly like a human?</h2>
+        <p>No. AI models use mathematical optimization and large amounts of data. Human learning involves many additional processes, including physical experience, reasoning, social interaction, and biological development.</p>
+        <a class="back-to-section" data-section="computer">← Back to questions</a>
+      </div>
+      <div class="section-answer" id="computer-answer-4" style="display:none;">
+        <h1>Why Can't Computers Think Exactly Like Humans?</h1>
+        <p>Computers can perform remarkable calculations and recognize complex patterns, but human intelligence involves perception, memory, emotions, social understanding, physical experience, and many other abilities.</p>
+        <h2>What is the fundamental difference?</h2>
+        <p>A computer follows computational processes designed by its software and learned parameters. Human cognition arises from a living biological system. Computers can imitate parts of human behavior without necessarily reproducing the full human experience.</p>
+        <a class="back-to-section" data-section="computer">← Back to questions</a>
+      </div>
+    </div>
+  </article>
+</section>
+
+<section id="pedagogy" class="content-section pedagogy-section" style="display:none;">
+  <article>
+    <h1>STEDA Teaching License Test</h1>
+    <p class="subtitle">Study questions and model answers based on the published syllabus themes.</p>
+    <div class="question-list">
+      <button class="question-card pedagogy-topic" data-topic="syllabus" type="button" onclick="showPedagogyTopic('syllabus')">Teaching License Test Syllabus — 10 Questions</button>
+      <button class="question-card pedagogy-topic" data-topic="cases" type="button" onclick="showPedagogyTopic('cases')">Case Studies — 10 Questions &amp; Answers</button>
+      <button class="question-card pedagogy-topic" data-topic="crqs" type="button" onclick="showPedagogyTopic('crqs')">CRQs — 10 Questions &amp; Model Answers</button>
+      <button class="question-card pedagogy-topic" data-topic="erqs" type="button" onclick="showPedagogyTopic('erqs')">ERQs — 10 Questions &amp; Model Answers</button>
+    </div>
+    <div class="pedagogy-answer answer-panel" data-answer="syllabus" style="display:none">
+      <h2>10 Syllabus Questions &amp; Answers</h2>
+      <div class="practice-item">
+        <h3>1. What are the three broad components of the STEDA Teaching License Test?</h3>
+        <p><strong>Question:</strong> What are the three broad components of the STEDA Teaching License Test?</p>
+        <div class="highlight"><strong>Answer:</strong> The published framework divides the test into Content Knowledge, Pedagogical Content Knowledge, and a professional/psychometric component. The syllabus also aligns the test with the National Professional Standards for Teachers, the Teacher Education Curriculum, and the Class 1–8 curriculum.</div>
+      </div>
+      <div class="practice-item">
+        <h3>2. What subjects are included in the Content Knowledge component?</h3>
+        <p><strong>Question:</strong> What subjects are included in the Content Knowledge component?</p>
+        <div class="highlight"><strong>Answer:</strong> The syllabus identifies Mathematics, Science, Social Studies, English, and Urdu or Sindhi, together with the school curriculum of Classes 1–8.</div>
+      </div>
+      <div class="practice-item">
+        <h3>3. What is the purpose of Content Knowledge questions?</h3>
+        <p><strong>Question:</strong> What is the purpose of Content Knowledge questions?</p>
+        <div class="highlight"><strong>Answer:</strong> They assess whether a prospective teacher has sufficient subject-matter understanding for the relevant school curriculum. The syllabus describes questions at easy and medium levels and links them to understanding, application, and analysis.</div>
+      </div>
+      <div class="practice-item">
+        <h3>4. What is Bloom's Taxonomy used for in the syllabus?</h3>
+        <p><strong>Question:</strong> What is Bloom's Taxonomy used for in the syllabus?</p>
+        <div class="highlight"><strong>Answer:</strong> Bloom's Taxonomy provides levels for thinking and learning objectives. In preparation, learners should move beyond memorising facts toward understanding, applying knowledge, and analysing information.</div>
+      </div>
+      <div class="practice-item">
+        <h3>5. What topics are included under Methods of Teaching?</h3>
+        <p><strong>Question:</strong> What topics are included under Methods of Teaching?</p>
+        <div class="highlight"><strong>Answer:</strong> The syllabus includes instructional approaches and strategies, effective questioning, cooperative learning, teacher-centred and student-centred approaches, Bloom's Taxonomy, and the National Professional Standards for Teachers in Pakistan.</div>
+      </div>
+      <div class="practice-item">
+        <h3>6. What are the Foundations of Education?</h3>
+        <p><strong>Question:</strong> What are the Foundations of Education?</p>
+        <div class="highlight"><strong>Answer:</strong> The syllabus identifies ideological, philosophical, sociological, psychological, and historical foundations of education.</div>
+      </div>
+      <div class="practice-item">
+        <h3>7. What does Child Development and Educational Psychology cover?</h3>
+        <p><strong>Question:</strong> What does Child Development and Educational Psychology cover?</p>
+        <div class="highlight"><strong>Answer:</strong> It includes major theories and domains of child development, developmental stages, factors affecting learning, individual differences, special needs, age-appropriate strategies, and learning theories including behaviorism, cognitivism, constructivism, and humanism.</div>
+      </div>
+      <div class="practice-item">
+        <h3>8. What is covered in Classroom Management?</h3>
+        <p><strong>Question:</strong> What is covered in Classroom Management?</p>
+        <div class="highlight"><strong>Answer:</strong> Preparation includes learning theories and classroom management, effective classroom environments, observation and data collection, physical and social environments, routines and schedules, time management, classroom community, physical setup, management strategies, and differentiated learning.</div>
+      </div>
+      <div class="practice-item">
+        <h3>9. What is included in Classroom Assessment, Test Development and Evaluation?</h3>
+        <p><strong>Question:</strong> What is included in Classroom Assessment, Test Development and Evaluation?</p>
+        <div class="highlight"><strong>Answer:</strong> The syllabus covers assessment, evaluation and testing; assessment types; feedback; assessment practices; lesson-plan assessment; test questions; performance assessment; rubrics; portfolios; teacher-made tests; validity; reliability; test development and review.</div>
+      </div>
+      <div class="practice-item">
+        <h3>10. Why is School, Community and Teacher included in the syllabus?</h3>
+        <p><strong>Question:</strong> Why is School, Community and Teacher included in the syllabus?</p>
+        <div class="highlight"><strong>Answer:</strong> It examines the structures and functions of schools and communities in Pakistan, education's impact on society, social interaction, culture, school-community relationships, family and religious institutions, and the working context of Pakistani teachers.</div>
+      </div>
+      <button class="back-to-pedagogy" type="button" onclick="showPedagogyQuestions()">← Back to Pedagogy</button>
+    </div>
+    <div class="pedagogy-answer answer-panel" data-answer="cases" style="display:none">
+      <h2>10 Case Study Questions &amp; Answers</h2>
+      <p>Practice cases based on the published pedagogy themes; they are not claimed to be official exam questions.</p>
+      <div class="practice-item">
+        <h3>1. Case Study 1: Mixed-Ability Mathematics Class</h3>
+        <p><strong>Question:</strong> A Grade 5 class has learners with very different mathematics abilities. What should the teacher do?</p>
+        <div class="highlight"><strong>Answer:</strong> Use diagnostic and formative assessment, flexible grouping, differentiated tasks, guided practice, and extension activities while keeping a common learning objective.</div>
+      </div>
+      <div class="practice-item">
+        <h3>2. Case Study 2: Silent Science Class</h3>
+        <p><strong>Question:</strong> Only a few students participate in a science lesson. How can participation improve?</p>
+        <div class="highlight"><strong>Answer:</strong> Use think-pair-share, purposeful questioning, wait time, small-group investigation, demonstrations, and opportunities for every learner to contribute.</div>
+      </div>
+      <div class="practice-item">
+        <h3>3. Case Study 3: Disruptive Transitions</h3>
+        <p><strong>Question:</strong> A class loses learning time because transitions are noisy. What is an effective response?</p>
+        <div class="highlight"><strong>Answer:</strong> Teach clear routines, practise them, use visual or time cues, reinforce appropriate behaviour, and investigate patterns rather than relying only on punishment.</div>
+      </div>
+      <div class="practice-item">
+        <h3>4. Case Study 4: Misaligned Assessment</h3>
+        <p><strong>Question:</strong> The objective asks students to explain a process, but the test only asks them to recall a definition. What should change?</p>
+        <div class="highlight"><strong>Answer:</strong> Align assessment with the objective by requiring explanation, reasoning, application, or interpretation rather than simple recall.</div>
+      </div>
+      <div class="practice-item">
+        <h3>5. Case Study 5: Learner Needs More Reading Time</h3>
+        <p><strong>Question:</strong> A learner understands concepts orally but struggles to finish written instructions. How can the teacher support the learner?</p>
+        <div class="highlight"><strong>Answer:</strong> Keep the learning goal but improve access through chunked instructions, visual supports, extra processing time, oral explanation, guided practice, and appropriate alternative demonstrations of understanding.</div>
+      </div>
+      <div class="practice-item">
+        <h3>6. Case Study 6: Weak Formative Assessment</h3>
+        <p><strong>Question:</strong> A teacher waits until the final examination to discover that many students misunderstood a concept. What should have been done?</p>
+        <div class="highlight"><strong>Answer:</strong> Use short checks during instruction, questioning, observation, exit tickets, and feedback so misconceptions can be addressed before the final assessment.</div>
+      </div>
+      <div class="practice-item">
+        <h3>7. Case Study 7: Teacher-Centred Lesson</h3>
+        <p><strong>Question:</strong> A teacher lectures for the whole period and students rarely solve problems themselves. What change is appropriate?</p>
+        <div class="highlight"><strong>Answer:</strong> Shorten direct instruction and move students into active tasks such as problem solving, discussion, investigation, peer explanation, and reflection.</div>
+      </div>
+      <div class="practice-item">
+        <h3>8. Case Study 8: Cultural Diversity</h3>
+        <p><strong>Question:</strong> Students come from different cultural and linguistic backgrounds. How should the teacher respond?</p>
+        <div class="highlight"><strong>Answer:</strong> Create an inclusive environment, respect differences, connect learning to relevant experiences, avoid stereotypes, and provide multiple ways for students to participate and demonstrate learning.</div>
+      </div>
+      <div class="practice-item">
+        <h3>9. Case Study 9: Poor Group Work</h3>
+        <p><strong>Question:</strong> Group activities become dominated by one student while others remain passive. What should the teacher do?</p>
+        <div class="highlight"><strong>Answer:</strong> Give groups a clear shared task, assign meaningful roles, establish individual accountability, monitor participation, and teach students how to collaborate.</div>
+      </div>
+      <div class="practice-item">
+        <h3>10. Case Study 10: Family-School Communication</h3>
+        <p><strong>Question:</strong> A student's performance is declining and the teacher wants family support. What approach is best?</p>
+        <div class="highlight"><strong>Answer:</strong> Use respectful two-way communication, describe evidence rather than blame, discuss practical support, listen to the family, agree on achievable steps, and follow up on progress.</div>
+      </div>
+      <button class="back-to-pedagogy" type="button" onclick="showPedagogyQuestions()">← Back to Pedagogy</button>
+    </div>
+    <div class="pedagogy-answer answer-panel" data-answer="crqs" style="display:none">
+      <h2>10 CRQs &amp; Model Answers</h2>
+      <div class="practice-item">
+        <h3>1. CRQ 1: Differentiated Instruction</h3>
+        <p><strong>Question:</strong> Explain two ways a teacher can differentiate instruction.</p>
+        <div class="highlight"><strong>Answer:</strong> A teacher can vary the level or complexity of tasks and use flexible grouping based on learner needs. The objective can remain common while support and extension differ.</div>
+      </div>
+      <div class="practice-item">
+        <h3>2. CRQ 2: Effective Questioning</h3>
+        <p><strong>Question:</strong> Why is questioning important in teaching?</p>
+        <div class="highlight"><strong>Answer:</strong> Questioning checks understanding, activates prior knowledge, encourages reasoning, reveals misconceptions, and gives the teacher evidence for adjusting instruction.</div>
+      </div>
+      <div class="practice-item">
+        <h3>3. CRQ 3: Cooperative Learning</h3>
+        <p><strong>Question:</strong> State two conditions for effective cooperative learning.</p>
+        <div class="highlight"><strong>Answer:</strong> Students need a clear shared task and individual responsibility. Roles, accountability, appropriate grouping, and explicit instructions make collaboration more productive.</div>
+      </div>
+      <div class="practice-item">
+        <h3>4. CRQ 4: Formative Assessment</h3>
+        <p><strong>Question:</strong> What is formative assessment?</p>
+        <div class="highlight"><strong>Answer:</strong> It is assessment used during learning to gather evidence of understanding and guide next teaching and learning steps. It can include questioning, observation, short tasks, and feedback.</div>
+      </div>
+      <div class="practice-item">
+        <h3>5. CRQ 5: Feedback</h3>
+        <p><strong>Question:</strong> What makes feedback useful?</p>
+        <div class="highlight"><strong>Answer:</strong> Useful feedback is timely, specific, connected to the learning goal, and gives the learner a clear indication of what is working and what to improve.</div>
+      </div>
+      <div class="practice-item">
+        <h3>6. CRQ 6: Classroom Management</h3>
+        <p><strong>Question:</strong> Give three strategies for effective classroom management.</p>
+        <div class="highlight"><strong>Answer:</strong> Establish predictable routines, communicate clear expectations, and reinforce appropriate behaviour. Consistency and observation of behaviour patterns are also important.</div>
+      </div>
+      <div class="practice-item">
+        <h3>7. CRQ 7: Bloom's Taxonomy</h3>
+        <p><strong>Question:</strong> How can Bloom's Taxonomy improve classroom questioning?</p>
+        <div class="highlight"><strong>Answer:</strong> It helps teachers progress from recall questions toward understanding, application, analysis and other more demanding forms of thinking.</div>
+      </div>
+      <div class="practice-item">
+        <h3>8. CRQ 8: Inclusive Education</h3>
+        <p><strong>Question:</strong> How can a teacher support individual differences without lowering expectations?</p>
+        <div class="highlight"><strong>Answer:</strong> Maintain the core learning objective but differentiate access, scaffolding, materials, time, grouping, or ways of demonstrating learning.</div>
+      </div>
+      <div class="practice-item">
+        <h3>9. CRQ 9: Validity and Reliability</h3>
+        <p><strong>Question:</strong> What is the difference between validity and reliability in testing?</p>
+        <div class="highlight"><strong>Answer:</strong> Validity concerns whether an assessment measures what it is intended to measure. Reliability concerns the consistency of measurement.</div>
+      </div>
+      <div class="practice-item">
+        <h3>10. CRQ 10: Portfolio Assessment</h3>
+        <p><strong>Question:</strong> What is the purpose of a learner portfolio?</p>
+        <div class="highlight"><strong>Answer:</strong> A portfolio collects selected evidence of learning over time. It can show progress, achievement, reflection, and development more broadly than a single test.</div>
+      </div>
+      <button class="back-to-pedagogy" type="button" onclick="showPedagogyQuestions()">← Back to Pedagogy</button>
+    </div>
+    <div class="pedagogy-answer answer-panel" data-answer="erqs" style="display:none">
+      <h2>10 ERQs &amp; Model Answers</h2>
+      <div class="practice-item">
+        <h3>1. ERQ 1: Designing a Student-Centred Lesson</h3>
+        <p><strong>Question:</strong> Design a lesson that moves from teacher explanation to active student learning.</p>
+        <div class="highlight"><strong>Answer:</strong> Begin with a clear objective and prior-knowledge activity. Give a concise model, then move learners into pair or group investigation, discussion, or problem solving. Use questioning and observation during the activity and finish with an assessment aligned to the objective.</div>
+      </div>
+      <div class="practice-item">
+        <h3>2. ERQ 2: Supporting Disadvantaged Learners</h3>
+        <p><strong>Question:</strong> Develop a plan for a class in which several learners are underperforming and have limited support at home.</p>
+        <div class="highlight"><strong>Answer:</strong> Use diagnostic assessment, measurable short-term goals, differentiated instruction, peer support, guided practice, locally available resources, frequent formative checks, and respectful family communication. Monitor evidence and adjust instruction.</div>
+      </div>
+      <div class="practice-item">
+        <h3>3. ERQ 3: Assessment-Based Improvement</h3>
+        <p><strong>Question:</strong> Explain how a teacher should use assessment evidence to improve teaching.</p>
+        <div class="highlight"><strong>Answer:</strong> Use diagnostic evidence to establish starting points, formative evidence during instruction to identify misconceptions, and summative evidence to judge achievement. Analyse patterns and use them to reteach, differentiate, change pacing, or extend learning.</div>
+      </div>
+      <div class="practice-item">
+        <h3>4. ERQ 4: Inclusive Classroom Management</h3>
+        <p><strong>Question:</strong> Develop a comprehensive approach to managing a diverse classroom with frequent disruption.</p>
+        <div class="highlight"><strong>Answer:</strong> Set shared expectations and routines, teach and practise them, organise the environment, use positive reinforcement and calm correction, investigate causes and patterns, differentiate learning, build relationships, and monitor whether changes improve participation.</div>
+      </div>
+      <div class="practice-item">
+        <h3>5. ERQ 5: School-Community Relationship</h3>
+        <p><strong>Question:</strong> Explain how a teacher can strengthen school, family and community relationships.</p>
+        <div class="highlight"><strong>Answer:</strong> Use respectful two-way communication, understand community contexts, connect learning with local experiences, involve suitable community resources, protect confidentiality, and respect cultural differences.</div>
+      </div>
+      <div class="practice-item">
+        <h3>6. ERQ 6: Child Development and Teaching</h3>
+        <p><strong>Question:</strong> Explain why knowledge of child development matters for classroom practice.</p>
+        <div class="highlight"><strong>Answer:</strong> Developmental knowledge helps teachers choose age-appropriate goals, examples, tasks, expectations and support. It also helps teachers recognise individual differences and respond appropriately to learning needs.</div>
+      </div>
+      <div class="practice-item">
+        <h3>7. ERQ 7: Learning Theories</h3>
+        <p><strong>Question:</strong> Compare behaviorism, cognitivism and constructivism in classroom practice.</p>
+        <div class="highlight"><strong>Answer:</strong> Behaviorism emphasises observable behaviour and reinforcement; cognitivism focuses on mental processes such as memory and processing; constructivism emphasises learners actively constructing understanding through experience and interaction. Teachers can draw on suitable strategies from each perspective.</div>
+      </div>
+      <div class="practice-item">
+        <h3>8. ERQ 8: Test Development</h3>
+        <p><strong>Question:</strong> Describe a sound process for developing a teacher-made test.</p>
+        <div class="highlight"><strong>Answer:</strong> Start with learning objectives and a test blueprint, select suitable item types, write clear questions, review alignment and difficulty, check language and bias, prepare marking criteria, administer consistently, analyse results, and revise weak items.</div>
+      </div>
+      <div class="practice-item">
+        <h3>9. ERQ 9: Differentiated Classroom</h3>
+        <p><strong>Question:</strong> Explain how differentiation can be implemented without creating separate lessons for every learner.</p>
+        <div class="highlight"><strong>Answer:</strong> Use a shared objective with flexible grouping, tiered or varied tasks, scaffolds, extension activities, different representations of content, and ongoing formative assessment. This provides different routes to the same important learning.</div>
+      </div>
+      <div class="practice-item">
+        <h3>10. ERQ 10: Teacher Professionalism</h3>
+        <p><strong>Question:</strong> Explain how a teacher's professional role extends beyond delivering lessons.</p>
+        <div class="highlight"><strong>Answer:</strong> Professional teaching includes planning, assessment, classroom management, collaboration, ethical conduct, communication with families and communities, reflection, responding to learner diversity, and continuing professional learning.</div>
+      </div>
+      <button class="back-to-pedagogy" type="button" onclick="showPedagogyQuestions()">← Back to Pedagogy</button>
+    </div>
+  </article>
+</section>
+
+<footer>© 2026 Know Why Today · Learn something new today.</footer>
+
+<script>
+(function () {
+  function allSections() {
+    return document.querySelectorAll(".content-section, #science");
+  }
+
+  function openSection(id) {
+    allSections().forEach(function (section) {
+      section.style.display = section.id === id ? "block" : "none";
+    });
+
+    document.querySelectorAll(".section-card").forEach(function (card) {
+      card.classList.toggle("active", card.getAttribute("href") === "#" + id);
+    });
+
+    window.scrollTo(0, 0);
+  }
+
+  function openQuestion(sectionId, number) {
+    var section = document.getElementById(sectionId);
+    if (!section) return;
+
+    var list = section.querySelector(".question-list");
+    if (list) list.style.display = "none";
+
+    section.querySelectorAll(".section-answer").forEach(function (answer) {
+      answer.style.display = "none";
+    });
+
+    var answer = document.getElementById(sectionId + "-answer-" + number);
+    if (answer) {
+      answer.style.display = "block";
+    }
+    window.scrollTo(0, 0);
+  }
+
+  function closeQuestion(sectionId) {
+    var section = document.getElementById(sectionId);
+    if (!section) return;
+
+    section.querySelectorAll(".section-answer").forEach(function (answer) {
+      answer.style.display = "none";
+    });
+
+    var list = section.querySelector(".question-list");
+    if (list) list.style.display = "flex";
+
+    window.scrollTo(0, 0);
+  }
+
+  // Unified Section navigation
+  document.querySelectorAll('.section-card[href^="#"]').forEach(function (link) {
+    link.addEventListener("click", function (event) {
+      event.preventDefault();
+      var id = link.getAttribute("href").substring(1);
+
+      if (document.getElementById(id)) {
+        openSection(id);
+        history.replaceState(null, "", "#" + id);
+      }
+    });
+  });
+
+  // Question cards click binding
+  document.querySelectorAll(".question-card[data-section]").forEach(function (button) {
+    button.addEventListener("click", function (event) {
+      event.preventDefault();
+      openQuestion(button.dataset.section, button.dataset.q);
+    });
+  });
+
+  // Back to questions binding
+  document.querySelectorAll(".back-to-section").forEach(function (button) {
+    button.addEventListener("click", function (event) {
+      event.preventDefault();
+      closeQuestion(button.dataset.section);
+    });
+  });
+
+  // Pedagogy handlers
+  window.showPedagogyTopic = function (topic) {
+    var section = document.getElementById("pedagogy");
+    if (!section) return;
+
+    var list = section.querySelector(".question-list");
+    if (list) list.style.display = "none";
+
+    section.querySelectorAll(".pedagogy-answer").forEach(function (answer) {
+      answer.style.display = "none";
+    });
+
+    var selected = section.querySelector('[data-answer="' + topic + '"]');
+    if (selected) selected.style.display = "block";
+
+    window.scrollTo(0, 0);
+  };
+
+  window.showPedagogyQuestions = function () {
+    var section = document.getElementById("pedagogy");
+    if (!section) return;
+
+    section.querySelectorAll(".pedagogy-answer").forEach(function (answer) {
+      answer.style.display = "none";
+    });
+
+    var list = section.querySelector(".question-list");
+    if (list) list.style.display = "flex";
+
+    window.scrollTo(0, 0);
+  };
+
+  // Initial load state
+  var initial = location.hash ? location.hash.substring(1) : "science";
+  if (document.getElementById(initial)) {
+    openSection(initial);
+  } else {
+    openSection("science");
+  }
+})();
+</script>
+
+</body>
+</html>

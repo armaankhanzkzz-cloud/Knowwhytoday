@@ -9,7 +9,7 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0}:root{--navy:#061738;--gold:#ffc928;--blue:#2474e8;--ink:#10234b;--muted:#667085;--line:#e4ebf4}html{scroll-behavior:smooth}body{font-family:Inter,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;background:linear-gradient(180deg,#f8fbff,#eef4fb);color:var(--ink);line-height:1.7}button,a{font:inherit}
 header{position:relative;overflow:hidden;background:radial-gradient(circle at 80% 20%,rgba(255,201,40,.18),transparent 24%),linear-gradient(135deg,#061738,#0a2857 55%,#061738);color:white;padding:25px 20px 0;box-shadow:0 12px 35px rgba(7,26,61,.18)}header:before{content:"";position:absolute;width:480px;height:480px;right:-210px;top:-300px;border:1px solid rgba(255,201,40,.24);border-radius:50%}.header-inner{max-width:1180px;margin:auto;display:flex;justify-content:center;position:relative;z-index:2;padding-bottom:18px}.logo-wrap{display:flex;align-items:center;gap:17px}.logo-img{width:105px;height:105px;object-fit:contain;filter:drop-shadow(0 8px 18px rgba(255,201,40,.2))}.logo-copy{text-align:left}.brand{font-size:clamp(28px,4vw,50px);font-weight:900;letter-spacing:-2px;line-height:1}.brand span{color:var(--gold)}.tagline{margin-top:9px;color:#dce6f7;font-size:13px;letter-spacing:3px;text-transform:uppercase}.tagline b{color:var(--gold)}.header-wave{height:28px;position:relative}.header-wave:before{content:"";position:absolute;left:-5%;right:-5%;top:2px;border-top:4px solid var(--gold);height:35px;border-radius:50% 50% 0 0/100% 100% 0 0;transform:rotate(-1deg)}
-.sections{max-width:1180px;margin:auto;padding:0 20px;position:relative;z-index:3}.section-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:10px;padding:12px 0 18px}.section-card{cursor:pointer;display:flex;align-items:center;justify-content:center;gap:7px;text-decoration:none;background:#fff;color:var(--ink);padding:13px 12px;border-radius:12px;text-align:center;font-weight:750;border:1px solid var(--line);box-shadow:0 7px 20px rgba(16,35,75,.08);transition:.2s}.section-card:hover{transform:translateY(-3px)}.section-card.active{color:var(--blue);border:2px solid #5a96ee;box-shadow:0 10px 24px rgba(36,116,232,.14)}
+.sections{max-width:1180px;margin:auto;padding:0 20px;position:relative;z-index:3}.section-grid{display:grid;grid-template-columns:repeat(9,1fr);gap:10px;padding:12px 0 18px}.section-card{cursor:pointer;display:flex;align-items:center;justify-content:center;gap:7px;text-decoration:none;background:#fff;color:var(--ink);padding:13px 12px;border-radius:12px;text-align:center;font-weight:750;border:1px solid var(--line);box-shadow:0 7px 20px rgba(16,35,75,.08);transition:.2s}.section-card:hover{transform:translateY(-3px)}.section-card.active{color:var(--blue);border:2px solid #5a96ee;box-shadow:0 10px 24px rgba(36,116,232,.14)}
 main{max-width:1180px;margin:auto;padding:15px 20px 45px}.hero-intro{display:grid;grid-template-columns:.85fr 1.15fr;gap:45px;align-items:center;padding:42px 0 35px}.eyebrow{display:inline-block;background:#e8f1ff;color:#1764d1;border-radius:8px;padding:6px 12px;font-size:12px;font-weight:900;letter-spacing:.7px;text-transform:uppercase;margin-bottom:15px}.hero-copy h1{font-size:clamp(38px,5vw,64px);line-height:1.08;letter-spacing:-2.5px;margin-bottom:17px}.hero-copy p{font-size:18px;color:#56657c;max-width:520px;margin-bottom:22px}.meta-row{display:flex;flex-wrap:wrap;gap:8px}.meta{background:white;border:1px solid var(--line);padding:8px 11px;border-radius:9px;color:#52617a;font-size:12px;font-weight:700;box-shadow:0 3px 12px rgba(16,35,75,.04)}
 .sky-art{height:310px;border-radius:24px;position:relative;overflow:hidden;background:linear-gradient(180deg,#2b82ed,#7ec7ff 63%,#dff3ff);box-shadow:0 18px 45px rgba(36,116,232,.18);border:6px solid white}.sun-art{position:absolute;width:82px;height:82px;right:57px;top:34px;border-radius:50%;background:#fff6ad;box-shadow:0 0 55px 18px rgba(255,239,133,.55)}.cloud-art{position:absolute;background:rgba(255,255,255,.93);border-radius:70px;width:190px;height:48px;left:48px;bottom:74px}.cloud-art:before,.cloud-art:after{content:"";position:absolute;background:white;border-radius:50%}.cloud-art:before{width:76px;height:76px;left:28px;bottom:12px}.cloud-art:after{width:98px;height:98px;right:23px;bottom:5px}.hill{position:absolute;bottom:-75px;left:-8%;width:116%;height:145px;background:#75b6df;border-radius:50% 50% 0 0}.hill:after{content:"";position:absolute;right:0;bottom:-25px;width:70%;height:110px;background:#4c8c66;border-radius:50% 50% 0 0}
 article{background:rgba(255,255,255,.97);padding:34px;border-radius:20px;border:1px solid var(--line);box-shadow:0 8px 30px rgba(16,35,75,.06)}article h1{font-size:32px;line-height:1.2;margin-bottom:10px}article .subtitle{font-size:16px;color:#6b7890;margin-bottom:24px}.question-list{display:flex;flex-direction:column;gap:12px;margin-top:20px}.question-card{width:100%;text-align:left;cursor:pointer;border:1px solid var(--line);background:#fff;border-radius:13px;padding:17px 20px;color:#17294d;font-size:16px;font-weight:750;display:flex;justify-content:space-between;align-items:center;box-shadow:0 3px 10px rgba(16,35,75,.035);transition:.2s}.question-card:after{content:"›";font-size:24px;color:#8d9ab0;font-weight:400}.question-card:hover{background:#f8fbff;border-color:#4f91ed;color:#1764d1;transform:translateX(3px)}.section-answers{margin-top:20px}.section-answer h1{font-size:34px;margin-bottom:16px}.section-answer h2{font-size:24px;margin:28px 0 12px}.section-answer p{font-size:16px;margin-bottom:20px}.highlight{background:#eef6ff;border-left:5px solid var(--blue);padding:20px;margin:28px 0;border-radius:10px}.highlight strong{color:#145fc7}.back-to-section,.back-to-pedagogy{display:inline-block;margin-top:15px;color:#1764d1;text-decoration:none;font-weight:800;cursor:pointer}.content-section,.pedagogy-section{max-width:1180px!important;margin:0 auto!important;padding:15px 20px 45px!important}.content-section article,.pedagogy-section article{max-width:900px;margin:auto}.practice-item{border:1px solid var(--line);border-radius:14px;padding:20px;background:#fff;margin-bottom:18px}.practice-item h3{margin-bottom:12px}footer{background:linear-gradient(135deg,#061738,#0a2857);color:#d9e4f6;padding:40px 20px 24px;text-align:center;font-size:14px;border-top:4px solid var(--gold)}footer strong{color:white;font-size:21px}footer span{color:var(--gold)}
@@ -36,7 +36,7 @@ article{background:rgba(255,255,255,.97);padding:34px;border-radius:20px;border:
 <a class="section-card" href="#technology">💻 Technology</a>
 <a class="section-card" href="#health">❤️ Health</a>
 <a class="section-card" href="#english">📝 English</a>
-<a class="section-card" href="#pedagogy">📚 Pedagogy</a> <a class="section-card" href="#history">🏛️ History</a>
+<a class="section-card" href="#pedagogy">📚 Pedagogy</a> <a class="section-card" href="#history">🏛️ History</a> <a class="section-card" href="#geography">🌍 Geography</a> <a class="section-card" href="#business-economics">💼 Business &amp; Economics</a>
 </div>
 </div>
 <main id="science">
@@ -1310,6 +1310,125 @@ article{background:rgba(255,255,255,.97);padding:34px;border-radius:20px;border:
 </div>
 </article>
 </section>
+
+<section class="content-section" id="geography" style="max-width:850px;margin:30px auto;padding:0 20px;display:none;">
+<article>
+<h2>Geography Questions</h2>
+<p class="subtitle">Explore key geographical concepts through concise questions and detailed answers.</p>
+<div class="question-list">
+<button class="question-card" data-q="0" data-section="geography">Why Are Rivers Important to Human Civilisation?</button>
+<button class="question-card" data-q="1" data-section="geography">What Causes Earthquakes?</button>
+<button class="question-card" data-q="2" data-section="geography">Why Do Mountains Form?</button>
+<button class="question-card" data-q="3" data-section="geography">What Causes Monsoons?</button>
+<button class="question-card" data-q="4" data-section="geography">Why Do Deserts Receive So Little Rainfall?</button>
+<button class="question-card" data-q="5" data-section="geography">What Is the Water Cycle?</button>
+<button class="question-card" data-q="6" data-section="geography">Why Do Different Regions Have Different Climates?</button>
+<button class="question-card" data-q="7" data-section="geography">What Causes Ocean Currents?</button>
+<button class="question-card" data-q="8" data-section="geography">Why Are Coastal Areas Vulnerable to Erosion?</button>
+<button class="question-card" data-q="9" data-section="geography">How Does Urbanisation Change the Physical Environment?</button>
+</div>
+<div class="section-answers">
+<div class="section-answer" id="geography-answer-0" style="display:none;">
+<h1>Why Are Rivers Important to Human Civilisation?</h1>
+<p>Rivers provide freshwater, fertile alluvial soils, food resources, transportation routes, and opportunities for irrigation. These advantages have supported agriculture, settlements, trade, and the growth of cities.</p>
+<h2>Why do many major settlements develop near rivers?</h2>
+<p>Access to reliable water and productive land can support dense populations and economic activity. Rivers can also connect inland areas with other settlements through transport and trade.</p>
+<a class="back-to-section" data-section="geography">← Back to questions</a>
+</div>
+<div class="section-answer" id="geography-answer-1" style="display:none;">
+<h1>What Causes Earthquakes?</h1>
+<p>Earthquakes occur when accumulated stress in Earth's crust is released suddenly, usually along faults. Most significant earthquakes are associated with the movement and interaction of tectonic plates.</p>
+<h2>Why are some earthquakes more destructive than others?</h2>
+<p>Damage depends on factors such as magnitude, depth, distance from populated areas, ground conditions, building quality, and the duration of shaking.</p>
+<a class="back-to-section" data-section="geography">← Back to questions</a>
+</div>
+<div class="section-answer" id="geography-answer-2" style="display:none;">
+<h1>Why Do Mountains Form?</h1>
+<p>Mountains form through processes including tectonic plate collision, volcanic activity, and uplift caused by movements within Earth's crust. At convergent boundaries, compression can fold, fault, and uplift large areas of crust.</p>
+<h2>Do all mountains form in the same way?</h2>
+<p>No. Fold mountains, volcanic mountains, fault-block mountains, and other landforms can develop through different geological processes.</p>
+<a class="back-to-section" data-section="geography">← Back to questions</a>
+</div>
+<div class="section-answer" id="geography-answer-3" style="display:none;">
+<h1>What Causes Monsoons?</h1>
+<p>Monsoons are seasonal changes in wind direction that are strongly influenced by differences in heating between land and ocean. These wind shifts can produce major seasonal changes in rainfall.</p>
+<h2>Why is the South Asian monsoon important?</h2>
+<p>It supplies a large share of annual rainfall across much of South Asia and therefore strongly affects agriculture, water resources, ecosystems, and economic activity.</p>
+<a class="back-to-section" data-section="geography">← Back to questions</a>
+</div>
+<div class="section-answer" id="geography-answer-4" style="display:none;">
+<h1>Why Do Deserts Receive So Little Rainfall?</h1>
+<p>Many deserts occur in regions where atmospheric circulation suppresses rainfall, such as subtropical high-pressure belts. Other deserts form in rain shadows, along cold ocean currents, or far from major sources of moisture.</p>
+<h2>Are all deserts hot?</h2>
+<p>No. A desert is defined primarily by aridity rather than temperature. Some deserts are extremely cold, including polar deserts.</p>
+<a class="back-to-section" data-section="geography">← Back to questions</a>
+</div>
+<div class="section-answer" id="geography-answer-5" style="display:none;">
+<h1>What Is the Water Cycle?</h1>
+<p>The water cycle describes the continuous movement of water between the atmosphere, land, oceans, and living organisms. Major processes include evaporation, transpiration, condensation, precipitation, infiltration, runoff, and groundwater flow.</p>
+<h2>Why is the water cycle important?</h2>
+<p>It continually redistributes freshwater and helps regulate ecosystems, weather, climate, and the availability of water for human societies.</p>
+<a class="back-to-section" data-section="geography">← Back to questions</a>
+</div>
+<div class="section-answer" id="geography-answer-6" style="display:none;">
+<h1>Why Do Different Regions Have Different Climates?</h1>
+<p>Climate varies because different places receive different amounts of solar energy and are influenced by latitude, altitude, atmospheric circulation, distance from oceans, ocean currents, and topography.</p>
+<h2>How does latitude affect climate?</h2>
+<p>Places near the equator generally receive more direct solar radiation throughout the year, while higher latitudes receive sunlight at lower angles and experience greater seasonal variation.</p>
+<a class="back-to-section" data-section="geography">← Back to questions</a>
+</div>
+<div class="section-answer" id="geography-answer-7" style="display:none;">
+<h1>What Causes Ocean Currents?</h1>
+<p>Ocean currents are driven by factors including wind, differences in temperature and salinity, Earth's rotation, and the shape of ocean basins. Surface currents and deep-water circulation transport heat and influence regional climates.</p>
+<h2>Why are ocean currents geographically important?</h2>
+<p>They redistribute heat around the planet and can influence rainfall, coastal temperatures, marine ecosystems, and weather patterns.</p>
+<a class="back-to-section" data-section="geography">← Back to questions</a>
+</div>
+<div class="section-answer" id="geography-answer-8" style="display:none;">
+<h1>Why Are Coastal Areas Vulnerable to Erosion?</h1>
+<p>Waves, currents, tides, storms, and rising sea levels can remove or redistribute coastal sediment. Human activities such as construction, vegetation removal, and altered sediment supply can increase vulnerability.</p>
+<h2>Can coastal erosion be reduced?</h2>
+<p>Measures include restoring natural barriers such as dunes and wetlands, managing development, and in some settings using engineered structures. The appropriate approach depends on local physical and social conditions.</p>
+<a class="back-to-section" data-section="geography">← Back to questions</a>
+</div>
+<div class="section-answer" id="geography-answer-9" style="display:none;">
+<h1>How Does Urbanisation Change the Physical Environment?</h1>
+<p>Urbanisation replaces natural surfaces with buildings, roads, and other infrastructure. This can alter drainage, increase surface runoff, reduce vegetation, modify local temperatures, and change habitats.</p>
+<h2>Why can cities experience higher temperatures?</h2>
+<p>Dense buildings and paved surfaces absorb and store heat, while reduced vegetation can limit cooling through shade and evapotranspiration. This contributes to the urban heat-island effect.</p>
+<a class="back-to-section" data-section="geography">← Back to questions</a>
+</div>
+</div>
+</article>
+</section>
+
+<section class="content-section" id="business-economics" style="max-width:850px;margin:30px auto;padding:0 20px;display:none;">
+<article>
+<h2>Business &amp; Economics Questions</h2>
+<p class="subtitle">Explore essential business and economic concepts through concise questions and clear explanations.</p>
+<div class="question-list">
+<button class="question-card" data-q="0" data-section="business-economics">What Is a Business?</button>
+<button class="question-card" data-q="1" data-section="business-economics">Why Is Market Research Important?</button>
+<button class="question-card" data-q="2" data-section="business-economics">What Is Entrepreneurship?</button>
+<button class="question-card" data-q="3" data-section="business-economics">What Is Profit?</button>
+<button class="question-card" data-q="4" data-section="business-economics">What Is Marketing?</button>
+<button class="question-card" data-q="5" data-section="business-economics">What Is Scarcity in Economics?</button>
+<button class="question-card" data-q="6" data-section="business-economics">What Is Opportunity Cost?</button>
+<button class="question-card" data-q="7" data-section="business-economics">What Are Supply and Demand?</button>
+<button class="question-card" data-q="8" data-section="business-economics">What Is Inflation?</button>
+<button class="question-card" data-q="9" data-section="business-economics">What Is GDP?</button>
+</div><div class="section-answers">
+<div class="section-answer" id="business-economics-answer-0" style="display:none;"><h1>What Is a Business?</h1><p>A business is an organisation or activity that provides goods or services to satisfy customers’ needs and wants, usually in exchange for revenue.</p><a class="back-to-section" data-section="business-economics">← Back to questions</a></div>
+<div class="section-answer" id="business-economics-answer-1" style="display:none;"><h1>Why Is Market Research Important?</h1><p>Market research helps businesses understand customers, competitors, market trends, and potential demand before making decisions.</p><a class="back-to-section" data-section="business-economics">← Back to questions</a></div>
+<div class="section-answer" id="business-economics-answer-2" style="display:none;"><h1>What Is Entrepreneurship?</h1><p>Entrepreneurship is the process of identifying opportunities, organising resources, taking calculated risks, and creating value through a venture.</p><a class="back-to-section" data-section="business-economics">← Back to questions</a></div>
+<div class="section-answer" id="business-economics-answer-3" style="display:none;"><h1>What Is Profit?</h1><p>Profit is the amount remaining when total revenue exceeds total costs. It is an important measure of a business’s financial performance.</p><a class="back-to-section" data-section="business-economics">← Back to questions</a></div>
+<div class="section-answer" id="business-economics-answer-4" style="display:none;"><h1>What Is Marketing?</h1><p>Marketing involves identifying customer needs and communicating the value of products or services through activities such as product development, pricing, promotion, and distribution.</p><a class="back-to-section" data-section="business-economics">← Back to questions</a></div>
+<div class="section-answer" id="business-economics-answer-5" style="display:none;"><h1>What Is Scarcity in Economics?</h1><p>Scarcity exists because resources are limited while human wants are extensive. It forces individuals, businesses, and governments to make choices.</p><a class="back-to-section" data-section="business-economics">← Back to questions</a></div>
+<div class="section-answer" id="business-economics-answer-6" style="display:none;"><h1>What Is Opportunity Cost?</h1><p>Opportunity cost is the value of the next-best alternative that is forgone when a choice is made.</p><a class="back-to-section" data-section="business-economics">← Back to questions</a></div>
+<div class="section-answer" id="business-economics-answer-7" style="display:none;"><h1>What Are Supply and Demand?</h1><p>Supply is the quantity producers are willing and able to sell, while demand is the quantity consumers are willing and able to buy at different prices, other factors remaining constant.</p><a class="back-to-section" data-section="business-economics">← Back to questions</a></div>
+<div class="section-answer" id="business-economics-answer-8" style="display:none;"><h1>What Is Inflation?</h1><p>Inflation is a sustained increase in the general price level of goods and services, which reduces the purchasing power of money.</p><a class="back-to-section" data-section="business-economics">← Back to questions</a></div>
+<div class="section-answer" id="business-economics-answer-9" style="display:none;"><h1>What Is GDP?</h1><p>Gross domestic product (GDP) measures the market value of final goods and services produced within an economy during a specified period.</p><a class="back-to-section" data-section="business-economics">← Back to questions</a></div>
+</div></article></section>
 <footer><strong>KNOW WHY <span>TODAY</span></strong><br/><span>Learn • Think • Grow</span><br/><br/>Explore questions, deepen your understanding, and satisfy your curiosity every day.<br/><br/>© 2026 Know Why Today · All rights reserved.</footer>
 <script>
 (function () {

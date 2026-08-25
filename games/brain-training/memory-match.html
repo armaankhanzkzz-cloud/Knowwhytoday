@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Memory Match | Know Why Today</title>
+<style>
+:root{--navy:#101b2d;--gold:#c99a35;--paper:#fbfbf9;--text:#172236}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);font-family:Arial,sans-serif;color:var(--text)}
+header,footer{background:var(--navy);color:white;text-align:center;padding:28px}
+.container{max-width:1000px;margin:auto;padding:25px}
+h1{text-align:center;font-family:Georgia,serif;font-size:55px}
+.subtitle{text-align:center;color:#687386}
+.stats{display:flex;justify-content:space-around;background:white;border:1px solid #ddd;padding:20px;margin:30px 0}
+.board{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.card{height:140px;background:linear-gradient(145deg,#101b2d,#263b59);border-radius:16px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:55px;color:white;transition:.3s;box-shadow:0 10px 25px #0002}
+.card:hover{transform:translateY(-5px)}
+.card.flipped,.card.matched{background:white;border:2px solid var(--gold)}
+button{background:var(--navy);color:white;border:0;padding:14px 30px;cursor:pointer}
+.center{text-align:center;margin:25px}
+@media(max-width:650px){.board{grid-template-columns:repeat(3,1fr)}h1{font-size:40px}}
+</style>
+</head>
+<body>
+
+<header>KNOW <span style="color:#c99a35">WHY</span> TODAY</header>
+
+<div class="container">
+<h1>Memory Match</h1>
+
+
+<div class="stats">
+<div>Level<br><b id="level">1</b></div>
+<div>Score<br><b id="score">0</b></div>
+<div>Moves<br><b id="moves">0</b></div>
+<div>Pairs<br><b id="pairs">0/2</b></div>
+</div>
+
+<div class="board" id="board"></div>
+<h2 id="message" style="text-align:center"></h2>
+<div class="center"><button onclick="restart()">Restart</button></div>
+</div>
+
+<footer>KNOW WHY TODAY</footer>
+
+<script>
+const objects=[
+"🧭","🔑","🕰️","🌍","🔍","🧠","💡","🪐","📖","🧪","🏛️"
+];
+
+let level=1,score=0,moves=0,found=0,first=null,second=null,lock=false;
+
+function createGame(){
+let amount=level+1;
+let cards=[...objects.slice(0,amount),...objects.slice(0,amount)];
+cards.sort(()=>Math.random()-0.5);
+
+let board=document.getElementById("board");
+board.innerHTML="";
+found=0;first=null;second=null;lock=false;
+document.getElementById("pairs").innerHTML=`0/${amount}`;
+
+cards.forEach(icon=>{
+let card=document.createElement("div");
+card.className="card";
+card.dataset.icon=icon;
+card.innerHTML="?";
+
+card.onclick=()=>{
+if(lock||card.classList.contains("flipped"))return;
+
+card.classList.add("flipped");
+card.innerHTML=icon;
+
+if(!first){first=card;return}
+
+second=card;
+moves++;
+document.getElementById("moves").innerHTML=moves;
+
+if(first.dataset.icon===second.dataset.icon){
+score+=4;
+found++;
+document.getElementById("score").innerHTML=score;
+document.getElementById("pairs").innerHTML=`${found}/${amount}`;
+first.classList.add("matched");
+second.classList.add("matched");
+reset();
+
+if(found===amount)setTimeout(nextLevel,700);
+
+}else{
+score=Math.max(0,score-1);
+document.getElementById("score").innerHTML=score;
+lock=true;
+
+setTimeout(()=>{
+first.innerHTML="?";
+second.innerHTML="?";
+first.classList.remove("flipped");
+second.classList.remove("flipped");
+reset();
+},900);
+}
+};
+board.appendChild(card);
+});
+}
+
+function reset(){first=null;second=null;lock=false}
+
+function nextLevel(){
+if(level<10){
+level++;
+document.getElementById("level").innerHTML=level;
+createGame();
+}else{
+document.getElementById("message").innerHTML="Congratulations! You completed all 10 levels.";
+}
+}
+
+function restart(){
+level=1;score=0;moves=0;
+document.getElementById("level").innerHTML=1;
+document.getElementById("score").innerHTML=0;
+document.getElementById("moves").innerHTML=0;
+createGame();
+}
+
+createGame();
+</script>
+</body>
+</html>

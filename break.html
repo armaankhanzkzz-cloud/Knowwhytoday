@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Break | Know Why Today</title>
+<style>
+body{font-family:Arial,sans-serif;background:#fbfbf9;color:#172236;margin:0}
+header{background:#101b2d;color:white;padding:25px}
+.logo{font-size:38px;font-weight:800}.logo span{color:#d7ad55}
+.container{max-width:1160px;margin:auto}
+nav{padding:15px 20px;border-bottom:1px solid #ddd}
+nav a{margin-right:20px;text-decoration:none;color:#536075;font-weight:bold}
+.hero{padding:70px 20px 50px;border-bottom:1px solid #ddd}
+.hero h1{font-size:70px;margin:15px 0}
+.hero p{font-size:20px;color:#687386;max-width:700px}
+.games{padding:50px 20px}
+.games-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:25px}
+
+.flip-card{height:260px;perspective:1000px;cursor:pointer}
+.flip-inner{width:100%;height:100%;position:relative;transition:.7s;transform-style:preserve-3d}
+.flip-card.active .flip-inner{transform:rotateY(180deg)}
+
+.card-side{
+position:absolute;
+width:100%;
+height:100%;
+backface-visibility:hidden;
+background:white;
+border:1px solid #dfe5ec;
+border-radius:12px;
+padding:30px;
+box-sizing:border-box
+}
+
+.card-back{transform:rotateY(180deg)}
+.icon{font-size:45px}
+.card-side h2{color:#162b4d}
+.card-side p{color:#687386}
+
+.game{
+margin-top:20px;
+padding:15px;
+background:#f5f7fa;
+border-radius:10px;
+font-weight:bold;
+}
+
+.game a{
+display:inline-block;
+margin-top:12px;
+color:#246bce;
+text-decoration:none;
+font-weight:bold;
+}
+
+.back-text{
+color:#687386;
+font-size:14px;
+margin-top:10px;
+}
+
+footer{background:#101b2d;color:#cbd5e3;padding:40px;text-align:center}
+
+@media(max-width:800px){
+.games-grid{grid-template-columns:1fr}
+.hero h1{font-size:45px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="container">
+<div class="logo">KNOW <span>WHY</span> TODAY</div>
+</div>
+</header>
+
+<nav>
+<div class="container">
+<a href="index.html">Home</a>
+<a href="break.html">Break</a>
+</div>
+</nav>
+
+<section class="hero container">
+<h1>Refresh Your Thinking.</h1>
+<p>Take a short break with interactive games designed to improve learning, memory, focus, and creativity.</p>
+</section>
+
+<section class="games container">
+<div class="games-grid">
+
+<div class="flip-card">
+<div class="flip-inner">
+<div class="card-side">
+<div class="icon">🎓</div>
+<h2>Educational Games</h2>
+<p>Learn while playing with fun quizzes, challenges, and knowledge games.</p>
+
+</div>
+<div class="card-side card-back">
+<h2>Educational Games</h2>
+<div class="game">
+🌎 World Explorer
+<br>
+<a href="games/educational/world-explorer.html">Play Game →</a>
+</div>
+<p class="back-text">More educational games will be added here.</p>
+</div>
+</div>
+</div>
+
+<div class="flip-card">
+<div class="flip-inner">
+<div class="card-side">
+<div class="icon">🧠</div>
+<h2>Brain Training</h2>
+<p>Improve memory, focus, logic, and problem-solving skills.</p>
+
+</div>
+<div class="card-side card-back">
+<h2>Brain Training</h2>
+<div class="game">
+🧠 Memory Match
+<br>
+<a href="games/brain-training/memory-match.html">Play Game →</a>
+</div>
+<p class="back-text">More brain games will be added here.</p>
+</div>
+</div>
+</div>
+
+<div class="flip-card">
+<div class="flip-inner">
+<div class="card-side">
+<div class="icon">🎮</div>
+<h2>Casual Arcade</h2>
+<p>Quick and fun games for short breaks.</p>
+
+</div>
+<div class="card-side card-back">
+<h2>Casual Arcade</h2>
+<div class="game">
+🤖 Robo Dog Cyber Sky
+<br>
+<a href="games/casual-arcade/robo-dog-cyber.html">Play Game →</a>
+</div>
+<p class="back-text">More arcade games will be added here.</p>
+</div>
+</div>
+</div>
+
+</div>
+</section>
+
+<footer>
+© 2026 Know Why Today. All rights reserved.
+</footer>
+
+<script>
+document.querySelectorAll(".flip-card").forEach(card=>{
+card.addEventListener("click",function(e){
+if(e.target.closest(".game a")){
+return;
+}
+this.classList.toggle("active");
+});
+});
+</script>
+
+</body>
+</html>

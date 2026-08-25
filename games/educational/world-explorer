@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>World Explorer | Know Why Today</title>
+<style>
+:root{--navy:#101b2d;--gold:#c99a35;--bg:#fbfbf9}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);font-family:Arial;color:#172236}
+header,footer{background:var(--navy);color:white;text-align:center;padding:25px}
+.container{max-width:1100px;margin:auto;padding:25px}
+h1,h2{font-family:Georgia}
+.score{position:fixed;top:15px;right:15px;background:white;padding:12px;border-radius:10px;box-shadow:0 4px 15px #0002;color:var(--gold);font-weight:bold;z-index:5}
+.menu,.countries,.places{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
+.card,.quiz{background:white;border:1px solid #ddd;border-radius:12px;padding:18px}
+.card{cursor:pointer;text-align:center}
+button{background:var(--navy);color:white;border:0;padding:12px;border-radius:8px;width:100%;margin:6px 0;cursor:pointer}
+.correct{background:#2e9d4d!important}
+.wrong{background:#c0392b!important}
+.info{background:white;border-radius:12px;padding:20px;margin-top:20px}
+@media(max-width:800px){.menu,.countries,.places{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:500px){.menu,.countries,.places{grid-template-columns:1fr}}
+
+.country-card{perspective:1000px;cursor:pointer}
+.country-inner{transition:.5s;transform-style:preserve-3d;position:relative}
+.country-card.flip .country-inner{transform:rotateY(180deg)}
+.country-front,.country-back{backface-visibility:hidden}
+.country-back{transform:rotateY(180deg);position:absolute;inset:0}
+
+.flip-card{overflow:hidden;perspective:1000px;cursor:pointer;min-height:180px;}
+.flip-card-inner{position:relative;width:100%;min-height:180px;transition:transform .6s;transform-style:preserve-3d;}
+.flip-card.flipped .flip-card-inner{transform:rotateY(180deg);}
+.flip-front,.flip-back{position:absolute;width:100%;min-height:180px;backface-visibility:hidden;}
+.flip-back{transform:rotateY(180deg);}
+
+.flip-card{
+perspective:1000px;
+cursor:pointer;
+height:200px;
+}
+.flip-inner{
+height:100%;
+position:relative;
+transform-style:preserve-3d;
+transition:transform .6s;
+}
+.flip-card.flipped .flip-inner{
+transform:rotateY(180deg);
+}
+.flip-front,.flip-back{
+position:absolute;
+width:100%;
+height:100%;
+backface-visibility:hidden;
+}
+.flip-back{
+transform:rotateY(180deg);
+}
+</style>
+</head>
+<body>
+<header>KNOW <span style="color:#c99a35">WHY</span> TODAY</header>
+<div class="score">Score: <span id="score">0</span></div>
+
+<div class="container">
+<h1>🌍 World Explorer</h1>
+<div class="menu">
+<button onclick="exploreCountries()">🌎 Explore Countries</button>
+<button onclick="startQuiz('flag')">🚩 Flag Challenge</button>
+<button onclick="startQuiz('capital')">🏙️ Capital Challenge</button>
+<button onclick="startQuiz('currency')">💰 Currency Challenge</button>
+<button onclick="showPlaces()">🏛️ Famous Places</button>
+<button onclick="startQuiz('random')">🎲 Random Explorer</button>
+</div>
+
+<div style="margin-top:25px">
+
+
+
+
+
+
+
+</div>
+<div id="app"></div>
+</div>
+
+<footer>KNOW WHY TODAY</footer>
+
+
+<script>
+function flipCountryCard(card){
+    card.classList.toggle('flipped');
+}
+
+window.addEventListener('popstate',function(){
+ if(typeof exploreCountries==='function') exploreCountries();
+});
+
+/* World Explorer Safe Mode */
+window.addEventListener('error', function(e){
+console.warn('World Explorer runtime issue:', e.message);
+});
+
+window.onerror=function(message){
+console.warn("World Explorer error:", message);
+return true;
+};
+
+const countries=[["🇯🇵", "Japan", "Tokyo", "Yen", "Mount Fuji", "Asia"], ["🇮🇳", "India", "New Delhi", "Rupee", "Taj Mahal", "Asia"], ["🇺🇸", "USA", "Washington D.C.", "Dollar", "Statue of Liberty", "North America"], ["🇬🇧", "United Kingdom", "London", "Pound", "Big Ben", "Europe"], ["🇫🇷", "France", "Paris", "Euro", "Eiffel Tower", "Europe"], ["🇩🇪", "Germany", "Berlin", "Euro", "Brandenburg Gate", "Europe"], ["🇮🇹", "Italy", "Rome", "Euro", "Colosseum", "Europe"], ["🇪🇸", "Spain", "Madrid", "Euro", "Sagrada Familia", "Europe"], ["🇵🇹", "Portugal", "Lisbon", "Euro", "Belem Tower", "Europe"], ["🇳🇱", "Netherlands", "Amsterdam", "Euro", "Canals of Amsterdam", "Europe"], ["🇨🇳", "China", "Beijing", "Yuan", "Great Wall", "Asia"], ["🇰🇷", "South Korea", "Seoul", "Won", "Gyeongbokgung Palace", "Asia"], ["🇵🇰", "Pakistan", "Islamabad", "Rupee", "Badshahi Mosque", "Asia"], ["🇧🇩", "Bangladesh", "Dhaka", "Taka", "Cox's Bazar", "Asia"], ["🇹🇭", "Thailand", "Bangkok", "Baht", "Grand Palace", "Asia"], ["🇸🇬", "Singapore", "Singapore", "Singapore Dollar", "Marina Bay Sands", "Asia"], ["🇲🇾", "Malaysia", "Kuala Lumpur", "Ringgit", "Petronas Towers", "Asia"], ["🇮🇩", "Indonesia", "Jakarta", "Rupiah", "Bali", "Asia"], ["🇻🇳", "Vietnam", "Hanoi", "Dong", "Ha Long Bay", "Asia"], ["🇸🇦", "Saudi Arabia", "Riyadh", "Riyal", "Masjid al-Haram", "Asia"], ["🇦🇪", "UAE", "Abu Dhabi", "Dirham", "Burj Khalifa", "Asia"], ["🇹🇷", "Turkey", "Ankara", "Lira", "Hagia Sophia", "Asia"], ["🇪🇬", "Egypt", "Cairo", "Pound", "Pyramids", "Africa"], ["🇿🇦", "South Africa", "Pretoria", "Rand", "Table Mountain", "Africa"], ["🇳🇬", "Nigeria", "Abuja", "Naira", "Zuma Rock", "Africa"], ["🇰🇪", "Kenya", "Nairobi", "Shilling", "Maasai Mara", "Africa"], ["🇲🇦", "Morocco", "Rabat", "Dirham", "Marrakesh", "Africa"], ["🇧🇷", "Brazil", "Brasilia", "Real", "Christ the Redeemer", "South America"], ["🇦🇷", "Argentina", "Buenos Aires", "Peso", "Iguazu Falls", "South America"], ["🇨🇱", "Chile", "Santiago", "Peso", "Atacama Desert", "South America"], ["🇨🇦", "Canada", "Ottawa", "Dollar", "Niagara Falls", "North America"], ["🇲🇽", "Mexico", "Mexico City", "Peso", "Chichen Itza", "North America"], ["🇦🇺", "Australia", "Canberra", "Dollar", "Sydney Opera House", "Oceania"], ["🇳🇿", "New Zealand", "Wellington", "Dollar", "Milford Sound", "Oceania"], ["🇬🇷", "Greece", "Athens", "Euro", "Acropolis", "Europe"], ["🇨🇭", "Switzerland", "Bern", "Franc", "Matterhorn", "Europe"], ["🇸🇪", "Sweden", "Stockholm", "Krona", "Vasa Museum", "Europe"], ["🇳🇴", "Norway", "Oslo", "Krone", "Fjords", "Europe"], ["🇦🇹", "Austria", "Vienna", "Euro", "Schonbrunn Palace", "Europe"], ["🇵🇱", "Poland", "Warsaw", "Zloty", "Wawel Castle", "Europe"], ["🇮🇷", "Iran", "Tehran", "Rial", "Persepolis", "Asia"], ["🇮🇱", "Israel", "Jerusalem", "Shekel", "Dead Sea", "Asia"], ["🇵🇪", "Peru", "Lima", "Sol", "Machu Picchu", "South America"], ["🇨🇴", "Colombia", "Bogota", "Peso", "Cartagena", "South America"], ["🇨🇺", "Cuba", "Havana", "Peso", "Old Havana", "North America"], ["🇮🇸", "Iceland", "Reykjavik", "Krona", "Blue Lagoon", "Europe"], ["🇫🇮", "Finland", "Helsinki", "Euro", "Northern Lights", "Europe"], ["🇩🇰", "Denmark", "Copenhagen", "Krone", "Nyhavn", "Europe"], ["🇨🇿", "Czech Republic", "Prague", "Koruna", "Prague Castle", "Europe"], ["🇭🇺", "Hungary", "Budapest", "Forint", "Parliament Building", "Europe"], ["🇬🇭", "Ghana", "Accra", "Cedi", "Cape Coast Castle", "Africa"], ["🇪🇹", "Ethiopia", "Addis Ababa", "Birr", "Lalibela Churches", "Africa"], ["🇹🇳", "Tunisia", "Tunis", "Dinar", "Carthage", "Africa"], ["🇺🇾", "Uruguay", "Montevideo", "Peso", "Punta del Este", "South America"], ["🇫🇯", "Fiji", "Suva", "Dollar", "Coral Reefs", "Oceania"], ["🇷🇴", "Romania", "Bucharest", "Leu", "Bran Castle", "Europe"], ["🇧🇬", "Bulgaria", "Sofia", "Lev", "Rila Monastery", "Europe"], ["🇭🇷", "Croatia", "Zagreb", "Euro", "Dubrovnik Old Town", "Europe"], ["🇷🇸", "Serbia", "Belgrade", "Dinar", "Belgrade Fortress", "Europe"], ["🇸🇰", "Slovakia", "Bratislava", "Euro", "Bratislava Castle", "Europe"], ["🇸🇮", "Slovenia", "Ljubljana", "Euro", "Lake Bled", "Europe"], ["🇺🇦", "Ukraine", "Kyiv", "Hryvnia", "Saint Sophia Cathedral", "Europe"], ["🇰🇿", "Kazakhstan", "Astana", "Tenge", "Charyn Canyon", "Asia"], ["🇲🇳", "Mongolia", "Ulaanbaatar", "Tugrik", "Gobi Desert", "Asia"], ["🇳🇵", "Nepal", "Kathmandu", "Rupee", "Mount Everest", "Asia"], ["🇱🇰", "Sri Lanka", "Sri Jayawardenepura Kotte", "Rupee", "Sigiriya", "Asia"], ["🇶🇦", "Qatar", "Doha", "Riyal", "Museum of Islamic Art", "Asia"], ["🇴🇲", "Oman", "Muscat", "Rial", "Sultan Qaboos Grand Mosque", "Asia"], ["🇯🇴", "Jordan", "Amman", "Dinar", "Petra", "Asia"], ["🇱🇧", "Lebanon", "Beirut", "Pound", "Jeita Grotto", "Asia"], ["🇹🇿", "Tanzania", "Dodoma", "Shilling", "Mount Kilimanjaro", "Africa"], ["🇲🇺", "Mauritius", "Port Louis", "Rupee", "Le Morne", "Africa"], ["🇸🇳", "Senegal", "Dakar", "CFA Franc", "Goree Island", "Africa"], ["🇨🇲", "Cameroon", "Yaounde", "CFA Franc", "Mount Cameroon", "Africa"], ["🇵🇦", "Panama", "Panama City", "Balboa", "Panama Canal", "North America"], ["🇨🇷", "Costa Rica", "San Jose", "Colon", "Arenal Volcano", "North America"], ["🇺🇸", "United States", "Washington D.C.", "Dollar", "Grand Canyon", "North America"], ["🇦🇲", "Armenia", "Yerevan", "Dram", "Geghard Monastery", "Asia"], ["🇦🇿", "Azerbaijan", "Baku", "Manat", "Flame Towers", "Asia"], ["🇬🇪", "Georgia", "Tbilisi", "Lari", "Gergeti Trinity Church", "Asia"], ["🇹🇯", "Tajikistan", "Dushanbe", "Somoni", "Pamir Mountains", "Asia"], ["🇺🇿", "Uzbekistan", "Tashkent", "Som", "Registan Square", "Asia"], ["🇰🇬", "Kyrgyzstan", "Bishkek", "Som", "Issyk-Kul Lake", "Asia"], ["🇧🇭", "Bahrain", "Manama", "Dinar", "Bahrain Fort", "Asia"], ["🇰🇼", "Kuwait", "Kuwait City", "Dinar", "Kuwait Towers", "Asia"], ["🇾🇪", "Yemen", "Sana'a", "Rial", "Old Sana'a", "Asia"], ["🇧🇼", "Botswana", "Gaborone", "Pula", "Okavango Delta", "Africa"], ["🇳🇦", "Namibia", "Windhoek", "Dollar", "Namib Desert", "Africa"], ["🇿🇲", "Zambia", "Lusaka", "Kwacha", "Victoria Falls", "Africa"], ["🇿🇼", "Zimbabwe", "Harare", "Dollar", "Great Zimbabwe", "Africa"], ["🇲🇬", "Madagascar", "Antananarivo", "Ariary", "Avenue of the Baobabs", "Africa"], ["🇪🇨", "Ecuador", "Quito", "Dollar", "Galapagos Islands", "South America"], ["🇧🇴", "Bolivia", "Sucre", "Boliviano", "Salar de Uyuni", "South America"], ["🇵🇾", "Paraguay", "Asuncion", "Guarani", "Itaipu Dam", "South America"], ["🇻🇪", "Venezuela", "Caracas", "Bolivar", "Angel Falls", "South America"], ["🇬🇹", "Guatemala", "Guatemala City", "Quetzal", "Tikal", "North America"], ["🇦🇫", "Afghanistan", "Kabul", "Afghani", "Band-e Amir Lakes", "Asia"], ["🇧🇹", "Bhutan", "Thimphu", "Ngultrum", "Tiger's Nest Monastery", "Asia"], ["🇲🇲", "Myanmar", "Naypyidaw", "Kyat", "Bagan Temples", "Asia"], ["🇰🇭", "Cambodia", "Phnom Penh", "Riel", "Angkor Wat", "Asia"], ["🇱🇦", "Laos", "Vientiane", "Kip", "Kuang Si Falls", "Asia"], ["🇧🇳", "Brunei", "Bandar Seri Begawan", "Dollar", "Omar Ali Saifuddien Mosque", "Asia"], ["🇹🇱", "Timor-Leste", "Dili", "Dollar", "Cristo Rei Statue", "Asia"], ["🇲🇻", "Maldives", "Male", "Rufiyaa", "Coral Islands", "Asia"], ["🇲🇹", "Malta", "Valletta", "Euro", "Blue Grotto", "Europe"], ["🇨🇾", "Cyprus", "Nicosia", "Euro", "Aphrodite's Rock", "Europe"], ["🇱🇺", "Luxembourg", "Luxembourg", "Euro", "Vianden Castle", "Europe"], ["🇲🇨", "Monaco", "Monaco", "Euro", "Monte Carlo", "Europe"], ["🇱🇮", "Liechtenstein", "Vaduz", "Franc", "Vaduz Castle", "Europe"], ["🇦🇩", "Andorra", "Andorra la Vella", "Euro", "Pyrenees Mountains", "Europe"], ["🇧🇦", "Bosnia and Herzegovina", "Sarajevo", "Mark", "Mostar Bridge", "Europe"], ["🇲🇪", "Montenegro", "Podgorica", "Euro", "Bay of Kotor", "Europe"], ["🇲🇰", "North Macedonia", "Skopje", "Denar", "Lake Ohrid", "Europe"], ["🇦🇱", "Albania", "Tirana", "Lek", "Albanian Alps", "Europe"], ["🇷🇼", "Rwanda", "Kigali", "Franc", "Volcanoes National Park", "Africa"], ["🇺🇬", "Uganda", "Kampala", "Shilling", "Bwindi Forest", "Africa"], ["🇲🇿", "Mozambique", "Maputo", "Metical", "Bazaruto Archipelago", "Africa"], ["🇦🇴", "Angola", "Luanda", "Kwanza", "Kalandula Falls", "Africa"], ["🇨🇮", "Ivory Coast", "Yamoussoukro", "CFA Franc", "Basilica of Our Lady of Peace", "Africa"], ["🇯🇲", "Jamaica", "Kingston", "Dollar", "Dunn's River Falls", "North America"], ["🇩🇴", "Dominican Republic", "Santo Domingo", "Peso", "Punta Cana", "North America"], ["🇭🇳", "Honduras", "Tegucigalpa", "Lempira", "Copan Ruins", "North America"], ["🇨🇩", "Democratic Republic of Congo", "Kinshasa", "Franc", "Virunga National Park", "Africa"], ["🇲🇱", "Mali", "Bamako", "CFA Franc", "Timbuktu", "Africa"], ["🇸🇩", "Sudan", "Khartoum", "Pound", "Meroe Pyramids", "Africa"], ["🇱🇾", "Libya", "Tripoli", "Dinar", "Leptis Magna", "Africa"], ["🇹🇩", "Chad", "N'Djamena", "CFA Franc", "Ennedi Plateau", "Africa"], ["🇸🇴", "Somalia", "Mogadishu", "Shilling", "Laas Geel", "Africa"], ["🇪🇷", "Eritrea", "Asmara", "Nakfa", "Dahlak Islands", "Africa"], ["🇧🇯", "Benin", "Porto-Novo", "CFA Franc", "Royal Palaces of Abomey", "Africa"], ["🇹🇬", "Togo", "Lome", "CFA Franc", "Koutammakou", "Africa"], ["🇸🇱", "Sierra Leone", "Freetown", "Leone", "Tiwai Island", "Africa"], ["🇱🇷", "Liberia", "Monrovia", "Dollar", "Providence Island", "Africa"], ["🇧🇸", "Bahamas", "Nassau", "Dollar", "Blue Holes", "North America"], ["🇧🇧", "Barbados", "Bridgetown", "Dollar", "Harrison's Cave", "North America"], ["🇹🇹", "Trinidad and Tobago", "Port of Spain", "Dollar", "Maracas Beach", "North America"], ["🇳🇮", "Nicaragua", "Managua", "Cordoba", "Ometepe Island", "North America"], ["🇸🇻", "El Salvador", "San Salvador", "Dollar", "Santa Ana Volcano", "North America"], ["🇧🇿", "Belize", "Belmopan", "Dollar", "Great Blue Hole", "North America"], ["🇬🇾", "Guyana", "Georgetown", "Dollar", "Kaieteur Falls", "South America"], ["🇸🇷", "Suriname", "Paramaribo", "Dollar", "Central Suriname Nature Reserve", "South America"], ["🇻🇺", "Vanuatu", "Port Vila", "Vatu", "Mount Yasur", "Oceania"], ["🇼🇸", "Samoa", "Apia", "Tala", "To Sua Ocean Trench", "Oceania"], ["🇵🇬", "Papua New Guinea", "Port Moresby", "Kina", "Kokoda Track", "Oceania"], ["🇸🇧", "Solomon Islands", "Honiara", "Dollar", "Marovo Lagoon", "Oceania"], ["🇬🇦", "Gabon", "Libreville", "CFA Franc", "Loango National Park", "Africa"], ["🇲🇷", "Mauritania", "Nouakchott", "Ouguiya", "Banc d'Arguin", "Africa"], ["🇳🇪", "Niger", "Niamey", "CFA Franc", "Sahara Desert", "Africa"], ["🇧🇫", "Burkina Faso", "Ouagadougou", "CFA Franc", "Sindou Peaks", "Africa"], ["🇬🇲", "Gambia", "Banjul", "Dalasi", "Kunta Kinteh Island", "Africa"], ["🇬🇳", "Guinea", "Conakry", "Franc", "Mount Nimba", "Africa"], ["🇬🇼", "Guinea-Bissau", "Bissau", "CFA Franc", "Orango Islands", "Africa"], ["🇨🇻", "Cape Verde", "Praia", "Escudo", "Pico do Fogo", "Africa"], ["🇰🇲", "Comoros", "Moroni", "Franc", "Mount Karthala", "Africa"], ["🇸🇨", "Seychelles", "Victoria", "Rupee", "Anse Source d'Argent", "Africa"], ["🇦🇬", "Antigua and Barbuda", "St. John's", "Dollar", "Nelson's Dockyard", "North America"], ["🇩🇲", "Dominica", "Roseau", "Dollar", "Boiling Lake", "North America"], ["🇬🇩", "Grenada", "St. George's", "Dollar", "Grand Anse Beach", "North America"], ["🇰🇳", "Saint Kitts and Nevis", "Basseterre", "Dollar", "Brimstone Hill", "North America"], ["🇱🇨", "Saint Lucia", "Castries", "Dollar", "Pitons", "North America"], ["🇻🇨", "Saint Vincent and the Grenadines", "Kingstown", "Dollar", "Tobago Cays", "North America"], ["🇹🇴", "Tonga", "Nuku'alofa", "Pa'anga", "Ha'amonga Trilithon", "Oceania"], ["🇰🇮", "Kiribati", "South Tarawa", "Dollar", "Phoenix Islands", "Oceania"], ["🇲🇭", "Marshall Islands", "Majuro", "Dollar", "Bikini Atoll", "Oceania"], ["🇫🇲", "Micronesia", "Palikir", "Dollar", "Nan Madol", "Oceania"], ["🇵🇼", "Palau", "Ngerulmud", "Dollar", "Rock Islands", "Oceania"], ["🇵🇸", "Palestine", "Ramallah", "Shekel", "Jericho", "Asia"], ["🇪🇪", "Estonia", "Tallinn", "Euro", "Tallinn Old Town", "Europe"], ["🇱🇻", "Latvia", "Riga", "Euro", "Riga Old Town", "Europe"], ["🇱🇹", "Lithuania", "Vilnius", "Euro", "Trakai Castle", "Europe"], ["🇧🇾", "Belarus", "Minsk", "Ruble", "Mir Castle", "Europe"], ["🇲🇩", "Moldova", "Chisinau", "Leu", "Orheiul Vechi", "Europe"], ["🇮🇪", "Ireland", "Dublin", "Euro", "Cliffs of Moher", "Europe"], ["🇭🇹", "Haiti", "Port-au-Prince", "Gourde", "Citadelle Laferrière", "North America"], ["🇵🇷", "Puerto Rico", "San Juan", "Dollar", "El Yunque", "North America"], ["🇸🇸", "South Sudan", "Juba", "Pound", "Boma National Park", "Africa"], ["🇨🇫", "Central African Republic", "Bangui", "CFA Franc", "Dzanga-Sangha", "Africa"], ["🇨🇬", "Republic of Congo", "Brazzaville", "CFA Franc", "Odzala National Park", "Africa"], ["🇲🇼", "Malawi", "Lilongwe", "Kwacha", "Lake Malawi", "Africa"], ["🇱🇸", "Lesotho", "Maseru", "Loti", "Maletsunyane Falls", "Africa"], ["🇸🇿", "Eswatini", "Mbabane", "Lilangeni", "Hlane National Park", "Africa"], ["🇳🇷", "Nauru", "Yaren", "Dollar", "Buada Lagoon", "Oceania"], ["🇹🇻", "Tuvalu", "Funafuti", "Dollar", "Funafuti Conservation Area", "Oceania"], ["🇸🇹", "São Tomé and Príncipe", "São Tomé", "Dobra", "Obo National Park", "Africa"], ["🇷🇪", "Réunion", "Saint-Denis", "Euro", "Piton de la Fournaise", "Africa"], ["🇸🇲", "San Marino", "San Marino", "Euro", "Guaita Tower", "Europe"], ["🇻🇦", "Vatican City", "Vatican City", "Euro", "St. Peter's Basilica", "Europe"], ["🇽🇰", "Kosovo", "Pristina", "Euro", "Rugova Canyon", "Europe"], ["🇦🇼", "Aruba", "Oranjestad", "Florin", "Eagle Beach", "North America"], ["🇨🇼", "Curaçao", "Willemstad", "Guilder", "Willemstad Historic Area", "North America"], ["🇫🇴", "Faroe Islands", "Torshavn", "Krone", "Lake Sørvágsvatn", "Europe"], ["🇵🇫", "French Polynesia", "Papeete", "Franc", "Bora Bora", "Oceania"]];
+
+let score=0,current=0,questions=[],mode="";
+function resetLevelScore(){
+    score=0;
+    current=0;
+    updateScore();
+}
+
+function updateScore(){document.getElementById("score").textContent=score}
+
+function showCountry(index){
+    const c = countries[index];
+    app.innerHTML = `
+    <div class="country-detail">
+      <button onclick="exploreCountries()">← Back</button>
+      <h2>${c[0]} ${c[1]}</h2>
+      <p><b>Capital:</b> ${c[2]}</p>
+      <p><b>Currency:</b> ${c[3]}</p>
+      <p><b>Continent:</b> ${c[5]}</p>
+    </div>`;
+}
+
+
+const countryPopularityOrder=[
+"USA","China","India","United Kingdom","Japan","Germany","France",
+"Italy","Brazil","Canada","Australia","South Korea","Spain","Mexico",
+"Turkey","Saudi Arabia","United Arab Emirates","Russia","Pakistan",
+"Egypt","Thailand","Indonesia","Singapore","Switzerland","Netherlands"
+];
+
+function countryPopularityRank(name){
+    let index=countryPopularityOrder.indexOf(name);
+    return index===-1 ? 999 : index;
+}
+
+function exploreCountries(){
+
+    let uniqueCountries=[...new Map(countries.map(c=>[c[1],c])).values()].sort((a,b)=>countryPopularityRank(a[1])-countryPopularityRank(b[1]));
+    app.innerHTML = `
+    <h2>Explore Countries</h2>
+    <div class="countries">
+    ${uniqueCountries.map((c,i)=>`
+        <div class="flip-card" onclick="flipCountry(this)">
+            <div class="flip-inner">
+                <div class="flip-front card">
+                    <h2>${c[0]}</h2>
+                    <b>${c[1]}</b>
+                    <p>Tap to learn</p>
+                </div>
+                <div class="flip-back card">
+                    <h3>${c[0]} ${c[1]}</h3>
+                    <p><b>Capital:</b> ${c[2]}</p>
+                    <p><b>Currency:</b> ${c[3]}</p>
+                    <p><b>Continent:</b> ${c[5]}</p>
+                </div>
+            </div>
+        </div>`).join("")}
+    </div>`;
+}
+
+function flipCountry(card){
+    card.classList.toggle("flipped");
+}
+function country(i){
+let c=countries[i];
+app.innerHTML=`<div class='info'>
+<h2>${c[0]} ${c[1]}</h2>
+<p>Capital: ${c[2]}</p>
+<p>Currency: ${c[3]}</p>
+<p>Region: ${c[5]}</p><p>Explore this country's geography and culture.</p>
+
+<button onclick="exploreCountries()">Back</button>
+</div>`;
+}
+
+function showPlaces(){
+app.innerHTML="<h2>Famous Places</h2><div class='places'>"+
+countries.map(c=>`<div class='card'><h3>${c[4]}</h3><p>${c[1]}</p></div>`).join("")+"</div>";
+}
+
+function startQuiz(m){
+mode=m;current=0;
+resetLevelScore(); questions=[...new Map(countries.map(c=>[c[1],c])).values()].sort(()=>Math.random()-0.5).slice(0,Math.min(20,countries.length));
+showQuestion();
+}
+
+function showQuestion(){
+let c=questions[current];
+let type=mode==="random"?["flag","capital","currency"][Math.floor(Math.random()*3)]:mode;
+let q="",answer="";
+if(type==="flag"){q=`Which country has this flag? ${c[0]}`;answer=c[1]}
+if(type==="capital"){q=`What is the capital of ${c[1]}?`;answer=c[2]}
+if(type==="currency"){q=`What currency is used in ${c[1]}?`;answer=c[3]}
+let opts=[answer];
+while(opts.length<4){let x=countries[Math.floor(Math.random()*countries.length)];let v=type==="flag"?x[1]:type==="capital"?x[2]:x[3];if(!opts.includes(v))opts.push(v)}
+opts.sort(()=>Math.random()-0.5);
+
+app.innerHTML=`<div class='quiz'><h2>Question ${current+1}/${questions.length}</h2><h3>${q}</h3>
+${opts.map(o=>`<button class="option" onclick="check(this,'${o}','${answer}')">${o}</button>`).join("")}
+<p id='feedback'></p>
+<button id="nextBtn" onclick="nextQuestion()" style="display:none">Next Question →</button>
+</div>`;
+}
+
+function check(btn,choice,answer){
+document.querySelectorAll(".quiz button.option").forEach(b=>b.disabled=true);
+
+if(choice===answer){
+btn.classList.add("correct");
+score+=10;
+feedback.innerHTML="Correct! +10 points";
+}else{
+btn.classList.add("wrong");
+document.querySelectorAll(".quiz button.option").forEach(b=>{
+if(b.textContent===answer)b.classList.add("correct");
+});
+feedback.innerHTML="";
+}
+
+updateScore();
+
+document.getElementById("nextBtn").style.display="block";
+}
+
+function nextQuestion(){
+current++;
+if(current<questions.length){
+showQuestion();
+}else{
+finish();
+}
+}
+
+function finish(){
+app.innerHTML=`<div class='quiz'><h2>Round Complete</h2><h3>Score: ${score}</h3><button onclick="startQuiz(mode)">Play Again</button></div>`;
+}
+
+function filterCountries(){
+let term=document.getElementById('countrySearch').value.toLowerCase();
+document.querySelectorAll('.card').forEach(card=>{
+if(card.parentElement.classList.contains('countries')){
+card.style.display=card.innerText.toLowerCase().includes(term)?'block':'none';
+}
+});
+}
+
+let activeContinent="All";
+
+function disabledFilterContinent(continent){
+activeContinent=continent;
+let list=continent==="All"?countries:countries.filter(c=>c[5]===continent);
+
+app.innerHTML="<h2>Countries</h2><p id='countryCount'></p><p>Total countries available: ${countries.length}</p><div class='countries'>"+
+list.map((c,i)=>`<div class="flip-card" onclick="flipCountryCard(this)">
+<div class="flip-card-inner">
+<div class="flip-front card">
+<h2>${c[0]}</h2>
+<b>${c[1]}</b>
+<p>Tap to see details</p>
+</div>
+<div class="flip-back card">
+<h3>${c[0]} ${c[1]}</h3>
+<p><b>Capital:</b> ${c[2]}</p>
+<p><b>Currency:</b> ${c[3]}</p>
+<p><b>Continent:</b> ${c[5]}</p>
+</div>
+</div>
+</div>`).join("")
++"</div>";
+}
+
+
+function countryFlipHandler(){
+    document.querySelectorAll('.flip-card').forEach(function(card){
+        card.addEventListener('click', function(){
+            this.classList.toggle('flipped');
+        });
+    });
+}
+setTimeout(countryFlipHandler,100);
+</script>
+</body>
+</html>

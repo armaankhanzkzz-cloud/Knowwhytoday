@@ -47,7 +47,7 @@ footer{background:var(--navy);color:#cbd5e3;padding:38px 20px;text-align:center;
 :root{--paper:#fbfbf9;--soft:#f0f3f6;--gold-soft:#f5efe0;--navy-2:#172945}
 body{background:var(--paper)}
 header{padding-top:18px}.header-inner{align-items:center;justify-content:space-between}.logo-img{width:64px;height:64px}.brand{font-size:clamp(26px,3.2vw,42px)}
-.sections{background:rgba(251,251,249,.96);position:sticky;top:0;z-index:50;border-bottom:1px solid var(--line)}
+.sections{background:rgba(251,251,249,.96);position:static;top:0;z-index:50;border-bottom:1px solid var(--line)}
 .section-grid{border-bottom:0;padding:10px 0;gap:24px;overflow-x:auto;flex-wrap:nowrap;scrollbar-width:none}.section-grid::-webkit-scrollbar{display:none}.section-card{white-space:nowrap;font-size:14px}.section-card.active:after{bottom:-11px}
 .publication-home{max-width:1160px;margin:auto;padding:0 20px 72px}
 .pub-hero{padding:72px 0 52px;display:grid;grid-template-columns:minmax(0,1.5fr) minmax(280px,.75fr);gap:64px;align-items:end;border-bottom:1px solid var(--line)}

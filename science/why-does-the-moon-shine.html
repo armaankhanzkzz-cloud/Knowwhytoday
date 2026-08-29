@@ -7,10 +7,15 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Why Does the Moon Shine?</title>
-<meta content="The Moon does not produce its own visible light. What we call moonlight is sunlight reflected from the Moon&#x27;s surface." name="description"/>
+<meta content="Why does the Moon shine? Learn how reflected sunlight makes the Moon visible and why its phases change throughout the lunar cycle." name="description"/>
 <meta content="index, follow" name="robots"/>
 <link href="../styles.css" rel="stylesheet"/>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Why Does the Moon Shine?", "description": "The Moon does not produce its own visible light. What we call moonlight is sunlight reflected from the Moon's surface.", "articleSection": "Science", "inLanguage": "en"}</script>
+<style>
+.article-figure{margin:1.75em 0;text-align:center;}
+.article-figure svg{max-width:100%;height:auto;border-radius:8px;}
+.article-figure figcaption{margin-top:0.6em;font-size:0.9em;opacity:0.75;font-style:italic;}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Why Does the Moon Shine?", "description": "Why does the Moon shine? Learn how reflected sunlight makes the Moon visible and why its phases change throughout the lunar cycle.", "articleSection": "Science", "inLanguage": "en"}</script>
 </head>
 <body>
 <header>
@@ -32,10 +37,230 @@
 <main class="content-section article-view" id="science-article">
 <article class="section-answers">
 <div class="section-answer" id="science-answer-1"><div class="article-kicker">KNOW WHY TODAY</div>
-<h1>Why Does the Moon Shine?</h1><div class="article-meta"><span class="subject-meta">Science</span></div><p class="article-lead">The Moon does not produce its own visible light. What we call moonlight is sunlight reflected from the Moon's surface.</p>
+<h1>Why Does the Moon Shine?</h1><div class="article-meta"><span class="subject-meta">Science</span></div><p class="article-lead">The Moon appears to shine brightly in the night sky, but it does not produce its own visible light. What we call moonlight is sunlight reflected from the Moon's surface. Understanding this also explains why the Moon changes shape throughout the month and why a full Moon looks much brighter than a thin crescent.</p>
+<h2>Does the Moon make its own light?</h2>
+<p>No. Unlike the Sun, the Moon is not a star and does not generate visible light through nuclear fusion. The bright part we see is sunlight that has reached the Moon, interacted with its rocky surface, and been reflected back toward space and Earth.</p>
+<p>Moonlight therefore begins as sunlight. When sunlight travels from the Sun to the Moon, some of that light is absorbed by the lunar surface and some is reflected. A portion of the reflected light travels toward Earth and enters our eyes. That is why we can see the Moon at night even though the Moon itself is not producing the light.</p>
+<figure class="article-figure">
+<svg viewBox="0 0 800 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="moonlightTitle moonlightDesc">
+<title id="moonlightTitle">Diagram showing sunlight traveling from the Sun to the Moon and reflecting to Earth</title>
+<desc id="moonlightDesc">The Sun on the left emits light rays that travel to the Moon in the middle. Part of that light reflects off the Moon's surface and travels onward to Earth on the right, illustrating that moonlight is reflected sunlight rather than light produced by the Moon itself.</desc>
+<defs>
+<linearGradient id="bgGrad2" x1="0%" y1="0%" x2="0%" y2="100%">
+<stop offset="0%" stop-color="#0a1230"/>
+<stop offset="100%" stop-color="#020512"/>
+</linearGradient>
+<radialGradient id="sunGrad2" cx="35%" cy="35%" r="65%">
+<stop offset="0%" stop-color="#fff7d6"/>
+<stop offset="100%" stop-color="#ffb020"/>
+</radialGradient>
+<radialGradient id="earthGrad2" cx="35%" cy="30%" r="70%">
+<stop offset="0%" stop-color="#7cc4ff"/>
+<stop offset="100%" stop-color="#274d8f"/>
+</radialGradient>
+</defs>
+
+<rect width="800" height="380" fill="url(#bgGrad2)"/>
+
+<g fill="#ffffff" opacity="0.5">
+<circle cx="50" cy="40" r="1.4"/><circle cx="120" cy="90" r="1.2"/><circle cx="200" cy="30" r="1.3"/>
+<circle cx="600" cy="330" r="1.3"/><circle cx="680" cy="300" r="1.2"/><circle cx="30" cy="330" r="1.3"/>
+<circle cx="400" cy="40" r="1.2"/><circle cx="400" cy="340" r="1.2"/>
+</g>
+
+<!-- Sun -->
+<g transform="translate(90,190)">
+<circle r="55" fill="url(#sunGrad2)"/>
+<g stroke="#ffd873" stroke-width="3">
+<line x1="-70" y1="0" x2="-90" y2="0"/>
+<line x1="-50" y1="-48" x2="-64" y2="-64"/>
+<line x1="-50" y1="48" x2="-64" y2="64"/>
+</g>
+</g>
+<text x="90" y="270" text-anchor="middle" fill="#ffd873" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="700">Sun</text>
+
+<!-- Rays: Sun to Moon (solid, direct sunlight) -->
+<line x1="150" y1="175" x2="365" y2="175" stroke="#ffe28a" stroke-width="2.5"/>
+<line x1="150" y1="205" x2="365" y2="205" stroke="#ffe28a" stroke-width="2.5"/>
+<polygon points="365,175 355,171 355,179" fill="#ffe28a"/>
+<polygon points="365,205 355,201 355,209" fill="#ffe28a"/>
+<text x="255" y="155" text-anchor="middle" fill="#ffe28a" font-family="Inter, Arial, sans-serif" font-size="13">Sunlight travels to the Moon</text>
+
+<!-- Moon -->
+<g transform="translate(400,190)">
+<circle r="38" fill="#d9d2b8"/>
+<circle cx="-12" cy="-10" r="6" fill="#c3bb9d"/>
+<circle cx="10" cy="14" r="8" fill="#c3bb9d"/>
+<circle cx="14" cy="-14" r="4" fill="#c3bb9d"/>
+</g>
+<text x="400" y="255" text-anchor="middle" fill="#e8e2c8" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="700">Moon</text>
+
+<!-- Rays: Moon to Earth (reflected, dashed to show it's weaker/reflected) -->
+<line x1="438" y1="175" x2="660" y2="150" stroke="#a9c8ff" stroke-width="2.5" stroke-dasharray="6 5"/>
+<line x1="438" y1="205" x2="660" y2="230" stroke="#a9c8ff" stroke-width="2.5" stroke-dasharray="6 5"/>
+<polygon points="660,150 649,150 653,158" fill="#a9c8ff"/>
+<polygon points="660,230 649,230 653,222" fill="#a9c8ff"/>
+<text x="560" y="130" text-anchor="middle" fill="#a9c8ff" font-family="Inter, Arial, sans-serif" font-size="13">Reflected light travels to Earth</text>
+
+<!-- Earth -->
+<g transform="translate(700,190)">
+<circle r="34" fill="url(#earthGrad2)"/>
+<path d="M -20,-6 Q -10,-14 0,-6 T 20,-4" fill="none" stroke="#e8f4ff" stroke-width="4" stroke-linecap="round" opacity="0.85"/>
+<path d="M -16,12 Q -4,6 10,14" fill="none" stroke="#e8f4ff" stroke-width="4" stroke-linecap="round" opacity="0.85"/>
+</g>
+<text x="700" y="250" text-anchor="middle" fill="#bcd4f7" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="700">Earth</text>
+
+</svg>
+<figcaption>Moonlight is sunlight that has reflected off the Moon's surface and traveled on to Earth.</figcaption>
+</figure>
+<h2>Why can we see the Moon at night?</h2>
+<p>The Moon orbits Earth, so its position in the sky changes from our point of view. At the same time, the Sun is illuminating one half of the Moon. Depending on where the Moon is in its orbit, we can see all, part, or very little of that illuminated half.</p>
+<p>The side of the Moon facing the Sun is illuminated, while the side facing away is much darker. As the Moon moves around Earth, the portion of its illuminated side visible from Earth changes.</p>
 <h2>Why does the Moon have phases?</h2>
-<p>As the Moon orbits Earth, we see different portions of its sunlit half. This changing view creates the phases from new Moon to full Moon and back again.</p>
-<div class="article-tools" data-related-for="science"><h3>Continue exploring</h3><div class="related-links"><a class="related-link" href="why-do-we-see-lightning-before-hearing-thunder.html">Why Do We See Lightning Before Hearing Thunder?</a><a class="related-link" href="why-does-ice-float-on-water.html">Why Does Ice Float on Water?</a></div></div><a class="back-to-section" href="index.html">Back to questions</a></div>
+<p>As the Moon orbits Earth, we see different portions of its sunlit half. This changing view creates the familiar phases from new Moon to full Moon and back again.</p>
+<p>At <strong>new Moon</strong>, the Moon is positioned roughly between Earth and the Sun. The side facing Earth is mostly the side that is not illuminated, so the Moon can be difficult to see. As the Moon continues around Earth, a small illuminated crescent becomes visible. The illuminated portion then grows through the waxing phases until we reach a full Moon.</p>
+<p>After full Moon, the visible illuminated portion begins to decrease. The Moon passes through waning phases, eventually becoming a thin crescent before returning to new Moon. The complete sequence takes about a month.</p>
+<figure class="article-figure">
+<svg viewBox="0 0 800 560" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="moonPhasesTitle moonPhasesDesc">
+<title id="moonPhasesTitle">Diagram of the Moon's orbit around Earth showing the eight lunar phases</title>
+<desc id="moonPhasesDesc">Earth sits at the center with the Sun's light coming from the right. Eight Moon positions are arranged in a circle around Earth, each showing the corresponding phase: new moon, waxing crescent, first quarter, waxing gibbous, full moon, waning gibbous, last quarter, and waning crescent.</desc>
+<defs>
+<radialGradient id="skyGrad" cx="50%" cy="40%" r="75%">
+<stop offset="0%" stop-color="#0f1a3d"/>
+<stop offset="100%" stop-color="#050a1f"/>
+</radialGradient>
+<radialGradient id="sunGrad" cx="35%" cy="35%" r="65%">
+<stop offset="0%" stop-color="#fff7d6"/>
+<stop offset="100%" stop-color="#ffca42"/>
+</radialGradient>
+<radialGradient id="earthGrad" cx="35%" cy="30%" r="70%">
+<stop offset="0%" stop-color="#6fb6ff"/>
+<stop offset="100%" stop-color="#2b5fa8"/>
+</radialGradient>
+</defs>
+
+<rect width="800" height="560" fill="url(#skyGrad)"/>
+
+<!-- scattered stars -->
+<g fill="#ffffff" opacity="0.6">
+<circle cx="40" cy="40" r="1.6"/><circle cx="90" cy="120" r="1.2"/><circle cx="150" cy="60" r="1.4"/>
+<circle cx="700" cy="50" r="1.6"/><circle cx="740" cy="140" r="1.2"/><circle cx="650" cy="90" r="1.3"/>
+<circle cx="60" cy="480" r="1.4"/><circle cx="120" cy="520" r="1.2"/><circle cx="30" cy="300" r="1.3"/>
+<circle cx="760" cy="470" r="1.4"/><circle cx="700" cy="520" r="1.2"/><circle cx="770" cy="300" r="1.3"/>
+<circle cx="400" cy="30" r="1.3"/><circle cx="400" cy="530" r="1.3"/>
+</g>
+
+<!-- orbit path -->
+<circle cx="400" cy="290" r="170" fill="none" stroke="#3a4a7a" stroke-width="1.5" stroke-dasharray="4 6"/>
+
+<!-- Sun icon (light source, off to the right) -->
+<g transform="translate(760,290)">
+<circle r="26" fill="url(#sunGrad)"/>
+<g stroke="#ffd873" stroke-width="2">
+<line x1="34" y1="0" x2="46" y2="0"/>
+<line x1="24" y1="-24" x2="32" y2="-32"/>
+<line x1="24" y1="24" x2="32" y2="32"/>
+</g>
+</g>
+<text x="760" y="335" text-anchor="middle" fill="#ffd873" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600">Sunlight</text>
+
+<!-- Earth at center -->
+<circle cx="400" cy="290" r="30" fill="url(#earthGrad)"/>
+<text x="400" y="345" text-anchor="middle" fill="#bcd4f7" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600">Earth</text>
+
+<!-- Moon phase renderer: for each angle, draw a small moon showing correct illumination -->
+<!-- Illumination always comes from the Sun's direction (to the right, 0 degrees) -->
+
+<!-- Helper: each moon is 24px radius, positioned on orbit circle r=170 -->
+
+<!-- New Moon: at 0 deg (between Earth and Sun) - dark side faces Earth -->
+<g transform="translate(570,290)">
+<circle r="22" fill="#1c2748" stroke="#3a4a7a" stroke-width="1.5"/>
+</g>
+<text x="570" y="330" text-anchor="middle" fill="#dfe8fb" font-family="Inter, Arial, sans-serif" font-size="12">New Moon</text>
+
+<!-- Waxing Crescent: at 45 deg -->
+<g transform="translate(520,170)">
+<circle r="22" fill="#1c2748" stroke="#3a4a7a" stroke-width="1.5"/>
+<path d="M -3,-22 A22,22 0 0,1 -3,22 A28,22 0 0,0 -3,-22 Z" fill="#f2e8c9"/>
+</g>
+<text x="520" y="140" text-anchor="middle" fill="#dfe8fb" font-family="Inter, Arial, sans-serif" font-size="12">Waxing Crescent</text>
+
+<!-- First Quarter: at 90 deg (top) -->
+<g transform="translate(400,120)">
+<circle r="22" fill="#1c2748" stroke="#3a4a7a" stroke-width="1.5"/>
+<path d="M 0,-22 A22,22 0 0,1 0,22 Z" fill="#f2e8c9"/>
+</g>
+<text x="400" y="90" text-anchor="middle" fill="#dfe8fb" font-family="Inter, Arial, sans-serif" font-size="12">First Quarter</text>
+
+<!-- Waxing Gibbous: at 135 deg -->
+<g transform="translate(280,170)">
+<circle r="22" fill="#f2e8c9" stroke="#3a4a7a" stroke-width="1.5"/>
+<path d="M 3,-22 A22,22 0 0,0 3,22 A28,22 0 0,1 3,-22 Z" fill="#1c2748"/>
+</g>
+<text x="280" y="140" text-anchor="middle" fill="#dfe8fb" font-family="Inter, Arial, sans-serif" font-size="12">Waxing Gibbous</text>
+
+<!-- Full Moon: at 180 deg (left, opposite Sun) -->
+<g transform="translate(230,290)">
+<circle r="22" fill="#f2e8c9" stroke="#e8dcb0" stroke-width="1.5"/>
+</g>
+<text x="230" y="330" text-anchor="middle" fill="#dfe8fb" font-family="Inter, Arial, sans-serif" font-size="12">Full Moon</text>
+
+<!-- Waning Gibbous: at 225 deg -->
+<g transform="translate(280,410)">
+<circle r="22" fill="#f2e8c9" stroke="#3a4a7a" stroke-width="1.5"/>
+<path d="M -3,-22 A22,22 0 0,1 -3,22 A28,22 0 0,0 -3,-22 Z" fill="#1c2748"/>
+</g>
+<text x="280" y="450" text-anchor="middle" fill="#dfe8fb" font-family="Inter, Arial, sans-serif" font-size="12">Waning Gibbous</text>
+
+<!-- Last Quarter: at 270 deg (bottom) -->
+<g transform="translate(400,460)">
+<circle r="22" fill="#1c2748" stroke="#3a4a7a" stroke-width="1.5"/>
+<path d="M 0,-22 A22,22 0 0,0 0,22 Z" fill="#f2e8c9"/>
+</g>
+<text x="400" y="500" text-anchor="middle" fill="#dfe8fb" font-family="Inter, Arial, sans-serif" font-size="12">Last Quarter</text>
+
+<!-- Waning Crescent: at 315 deg -->
+<g transform="translate(520,410)">
+<circle r="22" fill="#1c2748" stroke="#3a4a7a" stroke-width="1.5"/>
+<path d="M 3,-22 A22,22 0 0,0 3,22 A28,22 0 0,1 3,-22 Z" fill="#f2e8c9"/>
+</g>
+<text x="520" y="450" text-anchor="middle" fill="#dfe8fb" font-family="Inter, Arial, sans-serif" font-size="12">Waning Crescent</text>
+
+</svg>
+<figcaption>The Moon's position relative to the Sun and Earth determines which phase we see.</figcaption>
+</figure>
+<h2>Does the Moon change shape?</h2>
+<p>The Moon itself is not changing from a sphere into a crescent, half-circle, or another shape. Its physical shape remains essentially spherical. What changes is how much of its sunlit half we can see from Earth.</p>
+<p>Imagine shining a lamp on a ball in a dark room. One half of the ball would be illuminated, but the amount of the bright half visible to someone standing in a particular position would depend on where the ball was located. The phases of the Moon work on the same basic principle, although the real Earth-Moon-Sun system is much larger.</p>
+<h2>Why is a full Moon so bright?</h2>
+<p>During a full Moon, the Moon is on the opposite side of Earth from the Sun, so the side facing Earth is also facing approximately toward the Sun. A large portion of the illuminated lunar surface is therefore visible from Earth.</p>
+<p>A full Moon is much brighter than a thin crescent because a greater area of the sunlit surface is visible to us. The Moon is still only reflecting sunlight; it is not suddenly producing more light of its own.</p>
+<h2>Is the Moon a mirror?</h2>
+<p>Not exactly. The Moon's surface is made of rock and dust, and it reflects sunlight in many directions rather than acting like a smooth household mirror. Its surface is actually quite dark compared with materials designed to reflect a large amount of visible light.</p>
+<p>The Moon looks bright in the night sky partly because the surrounding sky can be very dark and because the illuminated lunar surface is relatively close to Earth. Against that dark background, reflected sunlight can appear strikingly bright.</p>
+<h2>Why can we sometimes see the dark part of a crescent?</h2>
+<p>Sometimes, when the Moon is a thin crescent, the rest of its disk can appear faintly illuminated. This is called <strong>earthshine</strong>.</p>
+<p>Earthshine happens when sunlight reflected from Earth reaches the Moon's night side and some of that light is reflected back toward Earth. The effect is much weaker than direct sunlight reflected from the Moon's sunlit side, but under suitable conditions it can make the darker portion of a crescent easier to notice.</p>
+<h2>Why don't we see a lunar eclipse every full Moon?</h2>
+<p>A lunar eclipse occurs when Earth moves between the Sun and the Moon and Earth's shadow falls across the Moon. It might seem as though this should happen every full Moon, but the Moon's orbit around Earth is tilted relative to Earth's orbit around the Sun.</p>
+<p>Because of that tilt, the Moon usually passes slightly above or below the region where Earth's shadow would fall. A lunar eclipse can occur when the geometry lines up closely enough for the Moon to enter Earth's shadow. When it does, the Moon can sometimes take on a reddish appearance because some sunlight passes through Earth's atmosphere before reaching the lunar surface.</p>
+<h2>Does moonlight really come from the Sun?</h2>
+<p>Yes. The chain is simple: sunlight leaves the Sun, travels across space, reaches the Moon, reflects from the lunar surface, and some of that reflected light travels to Earth. When you look at the Moon, the light entering your eyes has therefore taken a journey that began at the Sun.</p>
+<p>The reflected light is much weaker than direct sunlight because the Moon is not a powerful light source and only a portion of incoming sunlight is reflected toward Earth. Even so, it is enough to illuminate the lunar disk and make the Moon one of the most recognizable objects in the night sky.</p>
+<h2>In short</h2>
+<p>The Moon shines because it reflects sunlight. It does not produce its own visible light like the Sun. As the Moon travels around Earth, our viewing angle changes, so we see different portions of its sunlit half. This creates the phases from new Moon through crescent, quarter, gibbous, full Moon, and back again.</p>
+<p>So the next time you see a bright Moon, remember that you are not seeing a lamp in the sky. You are seeing sunlight reflected from another world, travelling across space and finally reaching your eyes.</p>
+<div class="article-tools" data-related-for="science"><h3>Continue exploring</h3><div class="related-links"><a class="related-link" href="why-do-we-see-lightning-before-hearing-thunder.html">Why Do We See Lightning Before Hearing Thunder?</a><a class="related-link" href="why-does-ice-float-on-water.html">Why Does Ice Float on Water?</a></div></div><section class="article-sources" aria-labelledby="sources-heading">
+<h2 id="sources-heading">Sources &amp; Further Reading</h2>
+<p>These sources were consulted to verify the scientific explanation. The article above is written independently in original wording and structure.</p>
+<ul>
+<li><a href="https://science.nasa.gov/moon/" rel="noopener noreferrer" target="_blank">NASA Science — Moon</a></li>
+<li><a href="https://science.nasa.gov/moon/moon-phases/" rel="noopener noreferrer" target="_blank">NASA Science — Moon Phases</a></li>
+<li><a href="https://science.nasa.gov/moon/lunar-eclipse/" rel="noopener noreferrer" target="_blank">NASA Science — Lunar Eclipses</a></li>
+</ul>
+</section>
+<a class="back-to-section" href="index.html">Back to questions</a></div>
 </article>
 </main>
 <footer class="site-footer"><div class="footer-inner"><div class="footer-grid">

@@ -1,0 +1,8 @@
+# Know Why Today
+# Allow search engines to crawl public content
+
+User-agent: *
+Allow: /
+
+# XML sitemap
+Sitemap: https://knowwhytoday.com/sitemap.xml
